@@ -8,8 +8,20 @@ const users = {
         try{ 
             const id= req.params.id;
             let user
-            id? user= await User.findByPk(id,{include:["company"]}): user=await User.findAll({include:["company"]})
+            id? user= await User.findByPk(id,{include:["company"]})
+            : user=await User.findAll({include:["company"]})
             res.json(user)
+
+        }catch(err){
+            res.json(err)
+        }
+    },
+
+    findUsersByCompany: async (req, res) =>{
+        try{ 
+            const id_company= req.params.id_company;
+            let users= await User.findAll({where:{id_company:id_company}, include:["company"]})
+            res.json(users)
 
         }catch(err){
             res.json(err)
@@ -87,7 +99,7 @@ const users = {
 //   "name": "M.",
 //   "last_name":"Rajoy",
 //   "email":"mariano@test.com",
-//   "company": 1 || null
+//   "id_company": 1 || null
 //   "password":"123456",
 //   "incorporation": "2022-01-13 16:10:05.272 +00:00",
 //   "role":"admin"
