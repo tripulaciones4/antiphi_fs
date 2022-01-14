@@ -3,7 +3,7 @@ const routes = require('express').Router();
 
 
 //http://localhost:4000/api/companies/name?name=NASA
-//http://localhost:4000/api/companies/search?id_company=4
+
 routes.get('/name', companies.findCompanyByName);
 //http://localhost:4000/api/companies/
 //http://localhost:4000/api/companies/2

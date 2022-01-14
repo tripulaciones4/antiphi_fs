@@ -2,7 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize =  require('../utils/db.js');
 
 class User extends Model {}
-User.init({
+
+User.init(
+  {
   id_user:{
     type:DataTypes.INTEGER.UNSIGNED,
     primaryKey: true,
@@ -25,7 +27,6 @@ User.init({
     type:DataTypes.STRING,
     allowNull:false
   },
-  incorporation: DataTypes.DATE,
   role:{
     type:DataTypes.STRING,
     allowNull:false
