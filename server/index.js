@@ -1,18 +1,19 @@
 const express = require('express')
 require('dotenv').config() // Carga fichero variables de entorno
 const sequelize= require("./utils/db.js");
-const companiesRouter = require('./routes/companies')
-const queriesRouter = require('./routes/queries')
-const usersRouter = require('./routes/users')
+const companiesRouter = require('./routes/companies');
+const queriesRouter = require('./routes/queries');
+const usersRouter = require('./routes/users');
 
-const app = express()
+const app = express();
 const port = 4000 //3000 para el front y 4000 para el back
 
+app.use(express.urlencoded({extended:false}))
 app.use(express.json()) // Para habilitar envio de JSON al servidor
 
 app.use("/api/companies/", companiesRouter)
 app.use("/api/queries/", queriesRouter) 
-app.use("/api/users/", usersRouter)  
+app.use("/api/users/", usersRouter)
 
 
 //Listen
