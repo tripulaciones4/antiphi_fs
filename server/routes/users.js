@@ -25,6 +25,9 @@ routes.patch('/:id/company', users.updateUser);
 //http://localhost:4000/api/users/create
 routes.post('/create', users.createUser);
 
+//http://localhost:4000/api/users/login
+routes.post('/login', users.loginUser);
+
 
 
 
