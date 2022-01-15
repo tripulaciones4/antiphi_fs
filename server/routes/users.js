@@ -1,9 +1,6 @@
 const users = require('../controllers/users');
 const routes = require('express').Router();
 
-
-//
-
 // http://localhost:4000/api/users/name?last_name=Zapatero
 // http://localhost:4000/api/users/name?last_name=Zapatero&name=J.
 routes.get('/name', users.findUserByName);
@@ -11,7 +8,6 @@ routes.get('/name', users.findUserByName);
 routes.get('/company/:id_company', users.findUsersByCompany);
 // http://localhost:4000/api/users/account/mariano@test.com
 routes.get('/account/:email', users.findUserByEmail);
-
 
 //http://localhost:4000/api/users/3
 //http://localhost:4000/api/users/
@@ -27,9 +23,6 @@ routes.post('/create', users.createUser);
 
 //http://localhost:4000/api/users/login
 routes.post('/login', users.loginUser);
-
-
-
 
 
 module.exports = routes;

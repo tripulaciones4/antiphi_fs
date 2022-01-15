@@ -6,7 +6,6 @@ const queriesRouter = require('./routes/queries');
 const usersRouter = require('./routes/users');
 
 const app = express();
-const jwt = require('jsonwebtoken');
 const port = 4000 //3000 para el front y 4000 para el back
 
 app.use(express.urlencoded({extended:false}))
@@ -15,11 +14,6 @@ app.use(express.json()) // Para habilitar envio de JSON al servidor
 app.use("/api/companies/", companiesRouter)
 app.use("/api/queries/", queriesRouter) 
 app.use("/api/users/", usersRouter)
-
-//Prueba JWT
-app.get('/', (req,res)=>{
-  res.send('Hola mundo')
-})
 
 
 //Listen
