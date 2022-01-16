@@ -27,9 +27,9 @@ const Register = () => {
                 <input type="password" name="password" placeholder="Password" />
                 <br />
 
-                <label htmlFor="password">Repita su contraseña</label>
+                <label htmlFor="password_repeat">Repita su contraseña</label>
                 <br />
-                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="password_repeat" placeholder="Password" />
                 <br />
 
                 <label for="account">Tipo de cuenta:</label><br />

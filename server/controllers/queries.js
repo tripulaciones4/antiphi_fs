@@ -28,6 +28,7 @@ const queries = {
 
 
     createQuery: async (req, res) =>{
+        
         try{ 
             const newQuery = await Query.create(req.body)
             res.json(newQuery)
