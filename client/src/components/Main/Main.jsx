@@ -1,14 +1,18 @@
 import React from "react";
-import Form from "../Form/Form";
 import Login from "../Login/Login";
-import Register from "../Register/Register";
+
 import "./Main.css"
+import {Route, Routes} from 'react-router-dom'; //Para las rutas
+
 
 const Main = () => {
-  return <div><h2>Esto es el Main</h2>
-  <Form/>
-  <Login/>
-  <Register/>
+  return <div>
+<Routes>
+      <Route path="/" element={< Login />}/>
+       
+    </Routes>
+
+  
   </div>;
 };
 
