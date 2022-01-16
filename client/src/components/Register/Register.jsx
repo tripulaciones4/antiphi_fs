@@ -6,10 +6,15 @@ const Register = () => {
         <div>
             <h2>Registro</h2>
 
-            <form>
+            <form  id="register" action="" method="post" >
+
                 <label htmlFor="name">Nombre</label>
                 <br />
                 <input type="text" name="name" placeholder="nombre" />
+                <br />
+                <label htmlFor="last_name">Apellido</label>
+                <br />
+                <input type="text" name="last_name" placeholder="apellido" />
                 <br />
 
                 <label htmlFor="email">Indroduzca su email</label>
@@ -22,9 +27,9 @@ const Register = () => {
                 <input type="password" name="password" placeholder="Password" />
                 <br />
 
-                <label htmlFor="password">Repita su contraseña</label>
+                <label htmlFor="password_repeat">Repita su contraseña</label>
                 <br />
-                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="password_repeat" placeholder="Password" />
                 <br />
 
                 <label for="account">Tipo de cuenta:</label><br />
