@@ -8,7 +8,6 @@ const queries = {
             id? query= await Query.findByPk(id, {include:["user"]})
                 :query=await Query.findAll({include:["user"]})
             res.json(query)
-
         }catch(err){
             res.json(err)
         }
