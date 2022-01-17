@@ -1,0 +1,57 @@
+body{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.container{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+    
+position: absolute;
+left: 35.35%;
+right: 35.49%;
+top: 38.77%;
+bottom: 22.85%;
+
+}
+
+.input_email{
+    height: 45px;
+    width: 300px;
+    left: 570px;
+    top: 453px;
+    border-radius: 10px;
+    background: rgba(0, 185, 173, 1);
+   
+}
+
+.input_password{
+height: 45px;
+width: 300px;
+left: 570px;
+top: 530px;
+border-radius: 10px;
+background: rgba(0, 185, 173, 1);
+
+}
+
+.button_login{
+
+    background-color: rgba(45, 57, 130, 1);
+    
+    }
+
+.button_register{
+
+/* Azul 1 */
+
+border: 1px solid #2D3982;
+box-sizing: border-box;
+border-radius: 50px;
+
+}
+

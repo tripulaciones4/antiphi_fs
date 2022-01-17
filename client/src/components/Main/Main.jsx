@@ -1,10 +1,12 @@
 import React from "react";
-import Form from "../Form/Form";
 import Login from "../Login/Login";
-import {Route, Routes} from 'react-router-dom'; //Para las rutas
+
 import "./Main.css"
+import {Route, Routes} from 'react-router-dom'; //Para las rutas
+
 
 const Main = () => {
+
   return (<main>  
   <Routes>    
     <Route path="/" element={<Login />} />    
@@ -12,6 +14,7 @@ const Main = () => {
   </Routes>
 
   </main>);
+
 };
 
 export default Main;
