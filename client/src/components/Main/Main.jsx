@@ -5,8 +5,7 @@ import {Route, Routes} from 'react-router-dom'; //Para las rutas
 import "./Main.css"
 
 const Main = () => {
-  return (<main>
-
+  return (<main>  
   <Routes>    
     <Route path="/" element={<Login />} />    
     <Route path="/home" element={<Form />} />    

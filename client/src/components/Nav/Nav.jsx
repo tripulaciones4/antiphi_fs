@@ -14,15 +14,18 @@ import "./Nav.css";
 const Nav = () => {
   return (<nav>
     <ul className="list-container">
-      <li className="li-house"><img className="house-icon" src={houseIcon} alt="houseIcon" /><Link to="/">Home</Link></li>       
-      <li className="li-up"><img className="up-icon" src={upIcon} alt="upIcon" /><Link to="/reporting">Reporte</Link></li>
-      <li className="li-user"><img className="user-icon" src={usersIcon} alt="usersIcon" /><Link to="/person">Empleados</Link></li>     
-      <li className="li-settings"><img className="settings-icon" src={settingsIcon} alt="settingsIcon" /><Link to="/config">Configuraciones</Link></li> 
-       
+      <Link to="/"><li className="li-house"><img className="house-icon" src={houseIcon} alt="houseIcon" />Home</li></Link>       
+      <Link to="/reporting"><li className="li-up"><img className="up-icon" src={upIcon} alt="upIcon" />Reporte</li></Link>
+      <Link to="/person"><li className="li-user"><img className="user-icon" src={usersIcon} alt="usersIcon" />Empleados</li></Link>     
+      <Link to="/config"><li className="li-settings"><img className="settings-icon" src={settingsIcon} alt="settingsIcon" />Configuraciones</li></Link> 
     </ul>
 
-    <p className="p-help"><img className="help-icon" src={helpIcon} alt="helpIcon" /><Link to="/help">Ayuda</Link></p>
-    <button className="btn-logOut"><img className="icon-logOut" src={logoutIcon} alt="logoutIcon" /><Link className="hola"to="/">Log Out</Link></button>
+    <span>
+    <Link to="/help"><p className="p-help"><img className="help-icon" src={helpIcon} alt="helpIcon" />Ayuda</p></Link>
+    </span>
+    
+    <Link to="/"><button className="btn-logOut"><img className="icon-logOut" src={logoutIcon} alt="logoutIcon" />Log Out</button></Link>
+    
     <img className="img-olas" src={olasDashboard} alt="olasDashboard" />
     
 </nav>);
