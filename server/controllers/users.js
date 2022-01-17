@@ -1,4 +1,5 @@
 const {User,Company}= require("../models/indexDB")
+const bcrypt = require('bcryptjs');
 
 
 
@@ -92,8 +93,6 @@ const users = {
         }
     },
 
-
-
 //req.body=
 // {
 //   "name": "M.",
@@ -106,11 +105,51 @@ const users = {
 // }
     createUser: async (req, res) =>{
         try{ 
-            const newUser = await User.create(req.body)
-            res.json(newUser)
+            const {name, last_name ,email , id_company, password, incorporation , role} = req.body;
+            const hash = await  bcrypt.hash(password,10);
+            const newUser = await User.create({
+                name: name, 
+                last_name: last_name ,
+                email: email , 
+                id_company: id_company, 
+                password: hash, 
+                incorporation: incorporation, 
+                role: role})
+
+            res.status(200).json(newUser)
+
+        }catch(err){
+            res.status(500).json(err)
+        }
+    },
+
+    // {
+    //     "email": "sar@test.com",
+    //     "password":"123456"
+    //   }
+
+    loginUser: async (req,res)=>{
+        try{ 
+            const {email, password} = req.body;
+            const user = await User.findOne({where:{email: email}});
+
+            // res.json(user)
+
+            if (user){
+                const validPass = await bcrypt.compare(password, user.password);
+                if(validPass){
+                    res.status(200).json("Valid Email and Password")
+                }else{
+                    res.json("Wrong Pass!")
+                }
+            }else{
+                res.status(404).json("User not found");
+            }
+            
         }catch(err){
             res.json(err)
         }
+
     }
 }
 

@@ -6,14 +6,15 @@ import {Route, Routes} from 'react-router-dom'; //Para las rutas
 
 
 const Main = () => {
-  return <div>
-<Routes>
-      <Route path="/" element={< Login />}/>
-       
-    </Routes>
 
-  
-  </div>;
+  return (<main>  
+  <Routes>    
+    <Route path="/" element={<Login />} />    
+    <Route path="/home" element={<Form />} />    
+  </Routes>
+
+  </main>);
+
 };
 
 export default Main;

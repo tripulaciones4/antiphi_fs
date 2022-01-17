@@ -1,0 +1,21 @@
+header{
+    border:1px solid pink;
+    background-color: #FFFFFF;
+    position:fixed;    
+    width: 237px;
+    Height:1024px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+}
+
+.img-logo{
+    height: 100px;
+    width: 114,57px;
+    padding-left: 53px;
+    padding-top: 54px;
+    padding-bottom: 79px;
+    border-radius: 0px;
+
+}
+
