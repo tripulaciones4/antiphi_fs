@@ -1,49 +1,136 @@
+
+
 body{
     background-color: rgba(255, 255, 255, 1);
+    
+                                                
+    
 }
 
+
+
 .container{
-    display: flex;
+display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
+
+.title{
+    /* Sub-Titulares */
+
+font-family: SF Pro Display;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+text-align: center;
+color: #224957;
+}
+
 
 .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
-position: absolute;
-left: 35.35%;
-right: 35.49%;
-top: 38.77%;
-bottom: 22.85%;
+    
+    /* width: 439px;
+    left: 500px;
+    top: 397px;
+    border-radius: [object Object]px; */
+    
+}
+
+.logo{
+height: 242px;
+width: 277px;
+left: 581px;
+border-radius: 0px;
+margin-bottom: 50px;
+margin-top: 100px;
+
 
 }
 
+
 .input_email{
-    height: 45px;
-    width: 300px;
-    left: 570px;
-    top: 453px;
-    border-radius: 10px;
-    background: rgba(0, 185, 173, 1);
+height: 45px;
+width: 300px;
+left: 570px;
+top: 453px;
+border-radius: 10px;
+background: rgba(0, 185, 173, 1);
+font-family: Lexend Deca;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+text-align: center;
+color: #FFFFFF;
+    
    
 }
 
 .input_password{
 height: 45px;
 width: 300px;
-left: 570px;
-top: 530px;
 border-radius: 10px;
 background: rgba(0, 185, 173, 1);
+font-family: SF Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+text-align: center;
+letter-spacing: 0.25px;
+color: #FFFFFF;
+
 
 }
+
+::placeholder{
+    color: #FFFFFF;
+}
+
+input[type=checkbox]{
+    height: 20px;
+    width: 20px;
+    margin-left: 0px;
+    box-shadow: 0px 0px 0px 1px turquoise;
+   
+}
+
+.input_checkbox{
+    margin-left: 0px;
+    margin-right: -13px;
+}
+
+.container_checkbox{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+
 
 .button_login{
 
     background-color: rgba(45, 57, 130, 1);
+    border-radius: 50px;
+    padding: 10px 47px;
+    margin-top: 30px;
+    color: #FFFFFF;
+    margin-bottom: -30px;
     
     }
+
 
 .button_register{
 
@@ -52,6 +139,16 @@ background: rgba(0, 185, 173, 1);
 border: 1px solid #2D3982;
 box-sizing: border-box;
 border-radius: 50px;
+padding: 8px 47px;
 
 }
 
+.waves{
+    height: 111px;
+    width: 100%;
+    border-radius: 0px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    
+}

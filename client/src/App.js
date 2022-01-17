@@ -11,7 +11,7 @@ import { BrowserRouter } from 'react-router-dom'; // utilizar rutas
 
 function App() {
     return (
-        <div className="App">
+        <div>
 
             <BrowserRouter> 
                 <Main />            
