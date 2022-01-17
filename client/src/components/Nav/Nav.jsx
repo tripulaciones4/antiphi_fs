@@ -22,7 +22,7 @@ const Nav = () => {
     </ul>
 
     <p className="p-help"><img className="help-icon" src={helpIcon} alt="helpIcon" /><Link to="/help">Ayuda</Link></p>
-    <button className="btn-logOut"><img className="icon-logOut" src={logoutIcon} alt="logoutIcon" /><Link to="/">Log Out</Link></button>
+    <button className="btn-logOut"><img className="icon-logOut" src={logoutIcon} alt="logoutIcon" /><Link className="hola"to="/">Log Out</Link></button>
     <img className="img-olas" src={olasDashboard} alt="olasDashboard" />
     
 </nav>);
