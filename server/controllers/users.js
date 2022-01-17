@@ -105,7 +105,7 @@ const users = {
 // }
     createUser: async (req, res) =>{
         try{ 
-            const {name, last_name ,email , id_company, password, incorporation , role} = req.body;
+            const {name, last_name ,email , id_company, password, department , role} = req.body;
             const hash = await  bcrypt.hash(password,10);
             const newUser = await User.create({
                 name: name, 
@@ -113,7 +113,7 @@ const users = {
                 email: email , 
                 id_company: id_company, 
                 password: hash, 
-                incorporation: incorporation, 
+                department: department, 
                 role: role})
 
             res.status(200).json(newUser)
