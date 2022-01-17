@@ -124,6 +124,7 @@ nav a{
     background: #2D3982;
     border-radius: 50px;
     color:white;
+    cursor: pointer;
 }
 
 .icon-logOut{
