@@ -1,7 +1,7 @@
 const {User,Company}= require("../models/indexDB")
 const bcrypt = require('bcryptjs');
-
-
+require('dotenv').config() // Carga fichero variables de entorno
+const jwt = require('jsonwebtoken');
 
 const users = {
     
@@ -138,7 +138,15 @@ const users = {
             if (user){
                 const validPass = await bcrypt.compare(password, user.password);
                 if(validPass){
-                    res.status(200).json("Valid Email and Password")
+                  
+                    const payload = {check:true};
+                    const token = jwt.sign(payload, process.env.SECRET, {expiresIn: '5m'}); 
+
+                    res.status(200).json({
+                        mensaje: 'Valid Email and Password y autenticación correcta',
+                        token: token
+                    })
+
                 }else{
                     res.json("Wrong Pass!")
                 }
