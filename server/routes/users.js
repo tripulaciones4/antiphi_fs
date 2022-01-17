@@ -22,10 +22,12 @@ routes.get('/:id?', validateToken, users.findUser);
 routes.patch('/:id/company',validateToken, users.updateUser);
 
 //http://localhost:4000/api/users/create
-routes.post('/create',validateToken, users.createUser);
+routes.post('/create', users.createUser);
 
 //http://localhost:4000/api/users/login
 routes.post('/login', users.loginUser );
+//http://localhost:4000/api/users/delete
+routes.delete('/delete',validateToken, users.deleteUser);
 
 
 module.exports = routes;

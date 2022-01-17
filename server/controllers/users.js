@@ -133,8 +133,6 @@ const users = {
             const {email, password} = req.body;
             const user = await User.findOne({where:{email: email}});
 
-            // res.json(user)
-
             if (user){
                 const validPass = await bcrypt.compare(password, user.password);
                 if(validPass){
@@ -158,8 +156,27 @@ const users = {
             res.json(err)
         }
 
-    }
+    },
+    //{
+        // id: 1,
+        //email:"marianopunto@test.com"
+    // }
+
+    deleteUser: async (req, res) =>{
+        try{
+            const {id,email} = req.body;
+            let user= await User.destroy({
+                where:{id_user:id,email:email},
+            })
+            res.json(user)
+
+        }catch(err){
+            res.json(err)
+        }
+    },
 }
+
+
 
 
 module.exports = users
