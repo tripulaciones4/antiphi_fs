@@ -1,0 +1,143 @@
+/*Contenedor principal*/
+
+nav{
+    height: 483px;  
+}
+
+/*Contenedor de los links*/
+
+.list-container{
+    margin-top: 0px;
+    padding-left: 23px;
+    padding-right: 38px;
+    height: 196px;  
+    width: 176px;
+}
+
+/*Links*/
+
+li{
+  /* border:1px solid red; */
+  list-style: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #00B9AD;
+  margin-bottom: 12px;  
+}
+
+.li-house{
+    width: 108px;    
+}
+
+.li-up{
+    width: 122px;
+}
+
+.li-user{
+    width: 147px;
+}  
+
+.li-settings{
+    width: 180px;
+}
+
+/*Enlaces*/
+
+nav ul a{
+    text-decoration: none;
+    color:white;
+    font-size: 18px;
+}
+
+nav span a{
+    text-decoration: none;
+    color:#2D3982;
+    font-size: 18px; 
+}
+
+nav a{
+    text-decoration: none;
+    color:white;
+    font-size: 18px; 
+}
+
+/*Iconos*/
+
+.house-icon{
+    /* border:1px solid purple; */
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;
+}
+
+.up-icon{
+    /* border:1px solid blueviolet; */
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+.user-icon{
+    /* border:1px solid blue; */
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+.settings-icon{
+    /* border:1px solid lightcoral; */
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+/*Parte inferior*/
+.p-help{
+    display:flex;
+    justify-content: center;
+    width: 108px;
+    width: 90px;
+    margin-left: 43px;
+    margin-top: 160px;
+}
+
+.help-icon{    
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;   
+}
+
+/*btn logOut*/
+
+.btn-logOut{
+    border:1px solid #2D3982;
+    margin-top: 11px;   
+    padding: 8px 47px;
+    display:flex;
+    justify-content: center;
+    width: 195px;
+    height: 40px;
+    margin-left: 23px;
+    background: #2D3982;
+    border-radius: 50px;
+    color:white;
+    cursor: pointer;
+}
+
+.icon-logOut{
+    height: 24px;
+    width: 24px;
+    margin-right: 10px; 
+}
+
+/*Olas*/
+.img-olas{
+    position: fixed;
+    width: 237px;
+    height: 32px;
+    bottom: 0px;
+    left: 0px;
+}
