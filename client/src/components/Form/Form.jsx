@@ -1,20 +1,18 @@
 import React from "react";
 import "./Form.css";
+import Searches from "../Searches/Searches";
+
 
 const Form = () => {
     return (
         <div>
-            <h3>Form</h3>
             <form action="" method="POST">
-                <label htmlFor="search">Indroduzca su busqueda</label>
-                <br />
-                <input type="text" name="search" placeholder="busqueda" />
-                <br />
-                <button type="submit" value="Submit">
-                    Enviar
-                </button>
+                <label htmlFor="search">Don't take the bait!</label>                    
+                <input type="text" name="search" placeholder="Buscar URL" />                    
+                <button type="submit" value="Submit">Buscar</button>
             </form>
-        </div>
+            <div><Searches /></div>
+        </div>      
     );
 };
 

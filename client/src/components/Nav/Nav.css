@@ -1,0 +1,131 @@
+/*Contenedor principal*/
+nav{
+    /* border:1px solid yellow; */
+    height: 483px;   
+
+}
+/*Contenedor de los links*/
+.list-container{
+    margin-top: 0px;
+    /* border:1px solid pink; */
+    padding-left: 23px;
+    padding-right: 38px;
+    height: 196px;  
+    width: 176px;
+}
+
+/*Links*/
+li{
+  border:1px solid red;
+  list-style: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #00B9AD;
+  margin-bottom: 12px;  
+}
+
+.li-house{
+    width: 108px;    
+}
+
+.li-up{
+    width: 122px;
+}
+.li-user{
+    width: 147px;
+
+}  
+.li-settings{
+    width: 180px;
+
+}
+
+
+li a{
+    text-decoration: none;
+    color:white;
+    font-size: 18px;
+}
+/*Iconos*/
+.house-icon{
+    border:1px solid purple;
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;
+    
+}
+
+.up-icon{
+    border:1px solid blueviolet;
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+.user-icon{
+    border:1px solid blue;
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+.settings-icon{
+    border:1px solid lightcoral;
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+.help-icon{
+    border:1px solid lightcyan;
+    height: 24px;
+    width: 24px; 
+}
+
+/*Parte inferior*/
+
+
+.p-help{
+    width: 108px;
+
+}
+
+/*btn logOut*/
+.btn-logOut{
+    border:1px solid grey;
+    position:relative;
+    top:130px;
+    padding: 8px 47px;
+    display:flex;
+    justify-content: center;
+    width: 190px;
+    height: 40px;
+    margin-left: 23px;
+    background: #2D3982;
+    border-radius: 50px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+.icon-logOut{
+    border:1px solid orange;
+    height: 24px;
+    width: 24px;
+    margin-right: 10px; 
+}
+
+/*Olas*/
+.img-olas{
+    border:1px solid orangered;
+    position: fixed;
+    width: 237px;
+    height: 32px;
+    bottom: 0px;
+    left: 0px;
+}
