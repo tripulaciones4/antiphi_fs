@@ -10,7 +10,7 @@ routes.get('/name', validateToken, users.findUserByName);
 routes.get('/company/:id_company', validateToken, users.findUsersByCompany);
 
 // http://localhost:4000/api/users/account/mariano@test.com
-routes.get('/account/:email', users.findUserByEmail);
+routes.get('/account/:email', validateToken, users.findUserByEmail);
 
 //http://localhost:4000/api/users/3
 //http://localhost:4000/api/users/
