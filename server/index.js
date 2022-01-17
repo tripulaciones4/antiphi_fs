@@ -28,7 +28,7 @@ app.listen(port, () => {
     //conectamos con la DB al levantar la app
   try{
   //!!Con .sync crea las tablas si aun no existen, pero Force=true ===> DROP TABLES, por eso dejamos en false para que no borre los datos
-  sequelize.sync({force:true})
+  sequelize.sync({force:false})
   console.log("Connection SQL successful")}
   catch(error){
     return ("No se pudo conectar:",error)
