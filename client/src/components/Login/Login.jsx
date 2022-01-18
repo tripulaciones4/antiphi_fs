@@ -1,31 +1,33 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import "./Login.css";
 
 import logo from "../../assets/img/LogoAntiphi.jpg"
 import waves from "../../assets/img/OlasDash.jpg"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { userContext } from '../../context/userContext';
 
 
 
 const Login = () => {
+
+    const {user, setUser} = useContext(userContext)
     
     const navigate=useNavigate()
-    const form = useRef()
+    const login_form = useRef()
 
     const handleSubmit =async event => {
-        console.log("activa");
         event.preventDefault();
-        console.log(form);
-        const user={
-            email:form.current[0].value,
-            password:form.current[1].value
+        const log_user={
+            email:login_form.current[0].value,
+            password:login_form.current[1].value
         }
-        console.log(user);
-        const logIn=await axios.post('http://localhost:4000/api/users/login', user)
-        console.log(logIn)
-        logIn.status==200?navigate("/home"):console.log("Contraseña o usuario incorrectos")
+        const logIn=await axios.post('http://localhost:4000/api/users/login', log_user)
+        let token={token:logIn.data.token}
+        const newUser = await Object.assign(token,user)
+        setUser(newUser)
+        logIn.data==="Wrong Pass!"?console.log("Contraseña o usuario incorrectos"):navigate("/home")
+
     }
 
 
@@ -38,7 +40,7 @@ const Login = () => {
             
 
             <div >
-                <form className="form" ref={form}>
+                <form className="form" ref={login_form}>
                     <h2 className="title">Ingrese para mantener y mantenerlos seguros.</h2>
                     <label htmlFor="email">Indroduzca su email</label>
                     <br />
