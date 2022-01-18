@@ -27,13 +27,17 @@ User.init(
     type:DataTypes.STRING,
     allowNull:false
   },
+  department:{
+    type:DataTypes.STRING,
+    allowNull:true
+  },
   role:{
     type:DataTypes.STRING,
     allowNull:false
   },
   id_company:{
     type: DataTypes.INTEGER.UNSIGNED,
-    allowNull:true,
+    allowNull:true
     }
 },{
      sequelize, 
