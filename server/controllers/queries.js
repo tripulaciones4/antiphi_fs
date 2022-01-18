@@ -29,6 +29,7 @@ const queries = {
     createQuery: async (req, res) =>{
         
         try{ 
+            console.log(req);
             const newQuery = await Query.create(req.body)
             res.json(newQuery)
         }catch(err){
