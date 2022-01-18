@@ -1,12 +1,9 @@
 import React from "react";
 import "./Form.css";
-
 // import axios from "axios"
-
-
 import Header from "../Header/Header";
 import Searches from "../Searches/Searches";
-import fondo  from '../../assets/fondo.jpeg';
+import fondo  from '../../assets/fondo.jpg';
 
 
 
@@ -29,8 +26,7 @@ const Form = () => {
     // }
     return (
         <div>   
-            <div><Header /></div>
-
+           
             <form className="form-search" action="" method="POST" style={
                 { backgroundImage: `url(${fondo})` }
                 }>

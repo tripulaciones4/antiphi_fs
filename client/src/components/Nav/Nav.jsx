@@ -4,8 +4,6 @@ import houseIcon  from '../../assets/houseIcon.jpg';
 import settingsIcon  from '../../assets/settingsIcon.jpg';
 import upIcon  from '../../assets/upIcon.jpg';
 import usersIcon  from '../../assets/usersIcon.jpg';
-import helpIcon  from '../../assets/helpIcon.jpg';
-import logoutIcon  from '../../assets/logoutIcon.jpg';
 import olasDashboard  from '../../assets/olasDashboard.jpg';
 
 
@@ -19,13 +17,6 @@ const Nav = () => {
       <Link to="/person"><li className="li-user"><img className="user-icon" src={usersIcon} alt="usersIcon" />Empleados</li></Link>     
       <Link to="/config"><li className="li-settings"><img className="settings-icon" src={settingsIcon} alt="settingsIcon" />Configuraciones</li></Link> 
     </ul>
-
-    <span>
-    <Link to="/help"><p className="p-help"><img className="help-icon" src={helpIcon} alt="helpIcon" />Ayuda</p></Link>
-    </span>
-    
-    <Link to="/"><button className="btn-logOut"><img className="icon-logOut" src={logoutIcon} alt="logoutIcon" />Log Out</button></Link>
-    
     <img className="img-olas" src={olasDashboard} alt="olasDashboard" />
     
 </nav>);
