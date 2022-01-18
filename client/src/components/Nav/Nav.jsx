@@ -12,7 +12,7 @@ import "./Nav.css";
 const Nav = () => {
   return (<nav>
     <ul className="list-container">
-      <Link to="/"><li className="li-house"><img className="house-icon" src={houseIcon} alt="houseIcon" />Home</li></Link>       
+      <Link to="/"><li className="li-house"><img className="house-icon" src={houseIcon} alt="houseIcon" />Home</li></Link>
       <Link to="/reporting"><li className="li-up"><img className="up-icon" src={upIcon} alt="upIcon" />Reporte</li></Link>
       <Link to="/person"><li className="li-user"><img className="user-icon" src={usersIcon} alt="usersIcon" />Empleados</li></Link>     
       <Link to="/config"><li className="li-settings"><img className="settings-icon" src={settingsIcon} alt="settingsIcon" />Configuraciones</li></Link> 
