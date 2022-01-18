@@ -1,5 +1,5 @@
 header{
-    border:1px solid pink;
+    /* border:1px solid pink; */
     background-color: #FFFFFF;
     position:fixed;    
     width: 237px;
@@ -14,8 +14,70 @@ header{
     width: 114,57px;
     padding-left: 53px;
     padding-top: 54px;
-    padding-bottom: 79px;
+    padding-bottom: 83px;
     border-radius: 0px;
 
+}
+
+/*Parte inferior*/
+
+.span-container{
+    position: fixed;
+    bottom: 50px;  
+}
+
+.p-help{
+    display:flex;
+    justify-content: center;
+    width: 90px;
+    margin-left: 43px;
+    margin-top: 160px;
+}
+ div .span-container a:nth-child(1){
+    text-decoration: none;
+    color:#2D3982;
+    font-size: 18px;
+    font-family: 'SFregular';
+    font-style: normal;  
+ }
+
+ div .span-container a:nth-child(2){
+    text-decoration: none;
+    color:white;
+    font-size: 18px;
+    font-family: 'SFregular';
+    font-style: bold;  
+ }
+
+.help-icon{    
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;   
+}
+
+/*btn logOut*/
+
+.btn-logOut{
+    border:1px solid #2D3982;
+    padding: 8px 47px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 195px;
+    height: 40px;    
+    
+    background: #2D3982;
+    border-radius: 50px;
+    color:white;
+    cursor: pointer;
+
+    margin-left: 23px;
+    margin-bottom:  10px;  
+}
+
+.icon-logOut{
+    height: 24px;
+    width: 24px;
+    margin-right: 10px; 
 }
 

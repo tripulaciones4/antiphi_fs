@@ -1,6 +1,6 @@
 
 .form-search{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-left: 237px;
     width:auto;
     height: 580px;
@@ -15,7 +15,7 @@
 }
 
 .label-search{
-    border: 1px solid purple; 
+    /* border: 1px solid purple;  */
     font-family: 'SFregular';  
     font-style: normal;
     font-weight: bold;
@@ -27,6 +27,7 @@
 
 .search-container{
     /* border: 1px solid yellow; */
+    width: 726px;
     display:flex;
     justify-content: center;
 }
@@ -36,7 +37,7 @@
     background: #F5F5F5;
     border: 1px solid #FFFFFF;    
     border-radius: 40px;
-    width: 734px;
+    width: 726px;
     height: 65px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -62,11 +63,8 @@
     font-family: 'SFregular';
     background: #2D3982;
     border-radius: 34px;
-    position:absolute;
-    
+    margin-left:-170px;  
     height: 70px;
     width: 180px;
-    left: 1092px;
     cursor:pointer;
-
 }

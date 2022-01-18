@@ -1,14 +1,10 @@
 import React, { useContext, useRef } from "react";
 import "./Form.css";
 import axios from "axios";
-
-
 import Header from "../Header/Header";
 import Searches from "../Searches/Searches";
-import fondo  from '../../assets/fondo.jpeg';
+import fondo  from '../../assets/fondo.jpg';
 import { userContext } from '../../context/userContext';
-
-
 
 const Form = () => {
     const {user} = useContext(userContext)
@@ -30,10 +26,7 @@ const Form = () => {
     };
     
     return (
-        <div>   
-            <div><Header /></div>
-
-
+        <div>  
             <form ref={search_form} className="form-search" style={
                   { backgroundImage: `url(${fondo})` }
                   }>
