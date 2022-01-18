@@ -138,7 +138,7 @@ const users = {
                 if(validPass){
                   
                     const payload = {check:true};
-                    const token = jwt.sign(payload, process.env.SECRET, {expiresIn: '5m'}); 
+                    const token = jwt.sign(payload, process.env.SECRET, {expiresIn: '30m'}); 
 
                     res.status(200).json({
                         mensaje: 'Valid Email and Password y autenticación correcta',
