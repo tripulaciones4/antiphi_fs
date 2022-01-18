@@ -33,7 +33,11 @@ const Form = () => {
         <div>   
             <div><Header /></div>
 
-            <form ref={search_form} className="form-search" style={{ backgroundImage: `url(${fondo})` }}>
+
+            <form ref={search_form} className="form-search" style={
+                  { backgroundImage: `url(${fondo})` }
+                  }>
+
                 <label className="label-search" htmlFor="search">Don't take the bait!</label>                    
                 <div className="search-container">
                     <input className="input-search" type="text" name="search" placeholder="Buscar URL" />                    
