@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import "./Register.css";
-import axios from "axios";
 
 const Register = ({data,setData}) => {
     const register_form = useRef()
