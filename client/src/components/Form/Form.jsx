@@ -28,7 +28,7 @@ const Form = () => {
             {           
                 url: search_form.current.search.value,
                 analysis_result:"physhing",
-                id_user:1
+                id_user:user.id_user
             },{
             headers: {'access-token': user.token}
             })

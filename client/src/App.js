@@ -14,7 +14,7 @@ function App() {
         <div> 
       <userContext.Provider value={{user,setUser}}>
             <BrowserRouter>
-                <Header /> 
+                {user.token?<Header/>:null} 
                 <Main />            
             </BrowserRouter> 
       </userContext.Provider>

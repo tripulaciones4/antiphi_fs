@@ -23,8 +23,11 @@ const Login = () => {
             password:login_form.current[1].value
         }
         const logIn=await axios.post('http://localhost:4000/api/users/login', log_user)
-        let token={token:logIn.data.token}
-        const newUser = await Object.assign(token,user)
+                
+        const response=logIn.data
+        delete response['mensaje'];
+
+        const newUser = await Object.assign(response,user)
         setUser(newUser)
         logIn.data==="Wrong Pass!"?console.log("Contraseña o usuario incorrectos"):navigate("/home")
 

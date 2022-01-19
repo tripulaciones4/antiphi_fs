@@ -29,13 +29,15 @@
 }
 
 .iborrainputfile {
-	font-size:40px; 
+    font-size:20px; 
 	font-weight:normal;
 	font-family: 'Lato';
 }
 
 .inputfileCSV + label {
     color: #c39f77;
+    border-radius: 50px;
+    border-style: solid;
 }
 
 .inputfileCSV:focus + label,
@@ -87,7 +89,7 @@
 }
 
 .inputfileCSV + label svg {
-    width: 100%;
-    height: 100%;
+    width: 35px;
+    height: 35px;
     fill: rgb(0, 251, 176);
 }
