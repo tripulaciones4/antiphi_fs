@@ -30,7 +30,7 @@ app.get('*', (req,res) =>{
 
 //Listen
 app.listen(PORT, () => {
-    console.log(`App listening at port: ${PORT}`)
+    console.log(`App listening at: ${__dirname} port: ${PORT}`)
     //conectamos con la DB al levantar la app
   try{
   //!!Con .sync crea las tablas si aun no existen, pero Force=true ===> DROP TABLES, por eso dejamos en false para que no borre los datos
