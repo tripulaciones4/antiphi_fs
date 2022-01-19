@@ -18,14 +18,14 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json()) // Para habilitar envio de JSON al servidor
 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, 'client/public')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use("/api/companies/", companiesRouter)
 app.use("/api/queries/", queriesRouter) 
 app.use("/api/users/", usersRouter)
 
-app.get('/', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/public/index.html'));
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/client/build/public/index.html'));
 });
 
 //Listen
