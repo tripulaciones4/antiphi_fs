@@ -1,8 +1,9 @@
+import axios from "axios";
 import React from "react";
 
 const QueryList = ({queries,type}) => {
   
-
+  console.log(queries);
   const sortLast=(arr)=>{
     let sorted=arr.sort(function (a, b) {
       if (a.createdAt < b.createdAt) {
@@ -16,6 +17,17 @@ const QueryList = ({queries,type}) => {
     return sorted
 };
 
+const removeDuplicate= (arr)=>{
+  const duplicateOut= arr.map(e=>{
+      return [JSON.stringify(e), e]
+      }
+    )
+    let querysMapArr = new Map(duplicateOut); // Pares de clave y valor
+    let noRepeat = [...querysMapArr.values()]; // Conversión a un array
+  return noRepeat
+};
+
+
 const sortPopular=(array)=>{
     let newArray=array.map((query)=>{
       const{url,analysis_result } =query
@@ -27,13 +39,9 @@ const sortPopular=(array)=>{
     }
   return query_recount
   })
-  const removeDuplicate= newArray.map(query=>{
-    return [JSON.stringify(query), query]
-  });
-  let querysMapArr = new Map(removeDuplicate); // Pares de clave y valor
-  let noRepeat = [...querysMapArr.values()]; // Conversión a un array
-  
-  let sorted=noRepeat.sort(function (a, b) {
+  const duplicateOut= removeDuplicate(newArray)
+    
+  let sorted=duplicateOut.sort(function (a, b) {
     if (a.many < b.many) {
         return 1;
     }
@@ -85,6 +93,17 @@ const time=(createdAt)=>{
       <p>{element.url}</p>
     </div>)
     :null}
+
+    {type==="lastQueriesCompany"? 
+    sortLast(queries).map((element,i,queries)=>
+    <div key={i}>
+      <h4>{element.url}</h4>
+      <p>{element.user.email}</p>
+      <p>Hace {time(element.createdAt)}</p>
+      <p>{queries.filter(e=>e.url===element.url).length}</p>
+      <p>{element.user.department}</p>
+    </div>
+    ):null}
 
   </div>);
 };

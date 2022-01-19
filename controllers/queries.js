@@ -24,6 +24,19 @@ const queries = {
         }
     },
 
+    findQueryByCompany: async (req, res) =>{
+        try{ 
+            const id= req.params.id;
+            const queries= await Query.findAll({include:["user"]})
+           
+            const queriesCompany= await queries.filter(query=>query.user.id_company==id)
+            res.json(queriesCompany)
+
+        }catch(err){
+            res.json(err)
+        }
+    },
+
 
 
     createQuery: async (req, res) =>{
