@@ -41,50 +41,75 @@ body{
 .input_email{
     height: 45px;
     width: 300px;
-    left: 570px;
-    top: 453px;
     border-radius: 10px;
+    border: 0px;
     background: rgba(0, 185, 173, 1);
-    font-family: Lexend Deca;
+    font-family: 'Lexend Deca', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300px;
     font-size: 14px;
-    line-height: 20px;
     text-align: center;
     color: #FFFFFF;
+
+    margin-bottom: 32px;
+    margin-top: 32px;
 }
+
 
 .input_password{
     height: 45px;
     width: 300px;
     border-radius: 10px;
+    border: 0px;
     background: rgba(0, 185, 173, 1);
-    font-family: SF Pro;
+    font-family: 'Lexend Deca', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300px;
     font-size: 14px;
-    line-height: 20px;
     text-align: center;
     letter-spacing: 0.25px;
     color: #FFFFFF;
-
+    margin-bottom: 20px;
 }
 
-::placeholder{
+input::placeholder{
+    font-family: 'Lexend Deca', sans-serif;
     color: #FFFFFF;
+    font-size: 14px;
+}
+
+.label_checkbox{
+    font-family: SFregular;
+    color:#093545;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0em; 
+    margin-left:6px;
+    padding-left:0px;
+
 }
 
 input[type=checkbox]{
     height: 20px;
     width: 20px;
     margin-left: 0px;
-    box-shadow: 0px 0px 0px 1px turquoise;
-   
+    box-shadow: 0px 0px 0px 1px #00B9AD;
 }
 
-.input_checkbox{
-    margin-left: 0px;
-    margin-right: -13px;
+
+
+h3{
+    font-family: SFregular;
+    color:#224957;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700px;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+
 }
 
 .container_checkbox{
@@ -92,7 +117,21 @@ input[type=checkbox]{
     display: flex;
     align-items: center;
     width: 300px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400px;
+    line-height: 17px;
+    letter-spacing: 0em;
 }
+
+.line_checkbox{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
 
 .button_login{
 
@@ -102,8 +141,17 @@ input[type=checkbox]{
     margin-top: 30px;
     color: #FFFFFF;
     margin-bottom: -30px;
-    
-    }
+    cursor:pointer;
+    width: 174px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:0px;
+    font-family: SFregular;
+    font-size: 18px;
+
+}
 
 
 .button_register{
@@ -111,7 +159,20 @@ input[type=checkbox]{
     box-sizing: border-box;
     border-radius: 50px;
     padding: 8px 47px;
+    cursor:pointer;
+    width: 174px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: SFregular;
+    font-size: 18px;
+    color:#2D3982;
 
+}
+
+.forget_password{
+    color:#2D3982;
 }
 
 .waves{

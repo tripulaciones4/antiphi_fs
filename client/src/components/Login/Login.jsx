@@ -45,20 +45,18 @@ const Login = () => {
             <div >
                 <form className="form" ref={login_form}>
                     <h2 className="title">Ingrese para mantener y mantenerlos seguros.</h2>
-                    <label htmlFor="email">Indroduzca su email</label>
-                    <br />
-                    <input  className="input_email" type="text" name="email" placeholder="miguel.depa@gmail.com" />
-                    <br />
-
-                    <label htmlFor="password">Indroduzca su contraseña</label>
-                    <br />
+                                       
+                    <input  className="input_email" type="text" name="email" placeholder="Email" />                    
                     <input className="input_password" type="password" name="password" placeholder="Password" />
-                    <br />
+                   
                 </form>
             </div>
 
             <div className="container_checkbox">
-                <input className="input_checkbox" type="checkbox" name="forget_password" placeholder="Password" /> Recuerdame
+                <div className="line_checkbox">
+                <input className="input_checkbox" type="checkbox" name="forget_password" placeholder="Password" />
+                <label className="label_checkbox">Recuerdame</label>
+                </div>
                 <p className="forget_password">¿Olvidaste contraseña?</p>
             </div>
 

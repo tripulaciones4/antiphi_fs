@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Form.css";
 import axios from "axios";
+import Searches from "../Searches/Searches";
 import fondo  from '../../assets/fondo.jpg';
 import { userContext } from '../../context/userContext';
 import QueryList from "../QueryList/QueryList";
@@ -41,9 +42,7 @@ const Form = () => {
     
     return (
         <div>  
-            <form ref={search_form} className="form-search" style={
-                  { backgroundImage: `url(${fondo})` }
-                  }>
+            <form ref={search_form} className="form-search" style={{ backgroundImage: `url(${fondo})`}}>
 
                 <label className="label-search" htmlFor="search">Don't take the bait!</label>                    
                 <div className="search-container">
