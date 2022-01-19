@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path');
 require('dotenv').config() // Carga fichero variables de entorno
 const sequelize= require("./utils/db.js");
 const cors = require("cors")
