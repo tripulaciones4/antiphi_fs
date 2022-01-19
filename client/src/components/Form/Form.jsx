@@ -46,6 +46,7 @@ const Form = () => {
     
     return (
         <div>  
+            
             <form ref={search_form} className="form-search" style={{ backgroundImage: `url(${fondo})`}}>
 
                 <label className="label-search" htmlFor="search">Don't take the bait!</label>                    
@@ -55,19 +56,28 @@ const Form = () => {
                 </div>
 
             </form>
-            <div> 
-                
-                <div style={{"display": "flex", alignItems: "center", justifyContent: "center",}}>
-                    <div style={{"display": "flex", flexDirection:"column", alignItems: "center", justifyContent: "center",}}>
-                    <h3>Busquedas más recientes</h3>
-                    <QueryList key={1} type={"lastQueries"} queries={queries}/>
+
+            
+            <div className="list-container-global">
+
+                <div className="div-container-listHome">
+               
+                    <div className="list-containerHome" >
+                        <h2 className="list-titleHome">Busquedas más recientes</h2>
+                        <QueryList className="containerListItems" key={1} type={"lastQueries"} queries={queries}/>
                     </div>
-                    <div style={{"display": "flex", flexDirection:"column", alignItems: "center", justifyContent: "center",}}>
-                    <h3>Más Buscadas</h3>
-                    <QueryList key={2} type={"mostPopular"} queries={queries}/>
+
+                    <div className="list-containerHome" >
+                        <h2 className="list-titleHome">Más Buscadas</h2>
+                    
+                        <QueryList className="containerListItems" key={2} type={"mostPopular"} queries={queries}/>
+                        
                     </div>
+
                 </div>
-            </div> 
+
+            </div>
+             
         </div>    
     );
 };

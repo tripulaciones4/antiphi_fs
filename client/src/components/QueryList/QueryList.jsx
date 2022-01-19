@@ -1,5 +1,8 @@
 import axios from "axios";
 import React from "react";
+import "./QueryList.css";
+import viewIcon  from '../../assets/viewIcon.jpg';
+import notificationIcon from '../../assets/notificationIcon.jpg';
 
 const QueryList = ({queries,type}) => {
   
@@ -75,12 +78,16 @@ const time=(createdAt)=>{
 
 
   return (
-  <div>
-    {type==="lastQueries"?
-    sortLast(queries).map((element,i)=>
-    <div key={i}>
-      <h4>Hace {time(element.createdAt)}</h4>
-      <p>{element.url}</p>
+  <div className="list-containerHome">
+    {type==="lastQueries" ? sortLast(queries).map((element,i)=>
+    <div className="cardList-Home" key={i}>
+
+      <div className="container-totalTimeView">
+        <img className="viewIcon" src={viewIcon} alt="viewIcon" />
+        <h4 className="totalTimeView">Hace {time(element.createdAt)}</h4>
+      </div>
+
+      <p className="elemUrl">{element.url}</p>
     </div>)
     :null}
 
@@ -88,9 +95,12 @@ const time=(createdAt)=>{
 
     {type==="mostPopular"?
     sortPopular(queries).map((element,i)=>
-    <div key={i}>
-      <h4>{element.many} {element.many>1?"consultas":"consulta"}.</h4>
-      <p>{element.url}</p>
+    <div className="cardList-Home" key={i}>
+      <div className="container-totalQueries">
+        <img className="notificationIcon" src={notificationIcon} alt="notificationIcon" />
+        <h4 className="numberQueries">{element.many} {element.many>1?"consultas":"consulta"}.</h4>
+      </div>
+      <p className="elemUrl">{element.url}</p>
     </div>)
     :null}
 

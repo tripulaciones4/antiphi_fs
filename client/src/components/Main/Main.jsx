@@ -22,6 +22,7 @@ const Main = () => {
     <Route path="/reporting/legitimates" element={<ReportingLegitimates/>} /> 
     <Route path="/reporting/physhings" element={<ReportingPhyshings />} />   
 
+
   </Routes>
 
   </main>);
