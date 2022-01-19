@@ -134,15 +134,22 @@ const users = {
             const user = await User.findOne({where:{email: email}});
 
             if (user){
-                const validPass = await bcrypt.compare(password, user.password);
+                const {password:pass,email,id_company,name,last_name,id_user,department,role,createdAt} =user
+                const validPass = await bcrypt.compare(password, pass);
                 if(validPass){
-                  
                     const payload = {check:true};
                     const token = jwt.sign(payload, process.env.SECRET, {expiresIn: '30m'}); 
-
                     res.status(200).json({
                         mensaje: 'Valid Email and Password y autenticación correcta',
-                        token: token
+                        token: token,
+                        id_user: id_user,
+                        name:name,
+                        last_name: last_name,
+                        email: email,
+                        id_company: id_company,
+                        department:department,
+                        role:role,
+                        createdAt:createdAt
                     })
 
                 }else{

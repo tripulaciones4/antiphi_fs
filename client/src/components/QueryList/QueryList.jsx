@@ -1,20 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
-import { userContext } from "../../context/userContext";
+import React from "react";
 
 const QueryList = ({queries,type}) => {
-  // const {user} = useContext(userContext)
-
-  // const [queries, setQueries] = useState([])
-
-//   useEffect(async() => {
-//     const data= await axios.get("http://localhost:4000/api/queries/",{
-//         headers: {'access-token': user.token}
-//         })
-//     data.data.mensaje?window.alert("Token inválido"):setQueries(data.data)
-// }, [])
-
-
+  
 
   const sortLast=(arr)=>{
     let sorted=arr.sort(function (a, b) {
@@ -79,7 +66,8 @@ const time=(createdAt)=>{
 
 
 
-  return <div>
+  return (
+  <div>
     {type==="lastQueries"?
     sortLast(queries).map((element,i)=>
     <div key={i}>
@@ -97,7 +85,8 @@ const time=(createdAt)=>{
       <p>{element.url}</p>
     </div>)
     :null}
-  </div>;
+
+  </div>);
 };
 
 export default QueryList;

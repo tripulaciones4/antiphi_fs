@@ -1,9 +1,9 @@
 .windowCsv{
-    left: 0;
+    /* left: 0;
     bottom: 0;
     right: 0;
     top: 0;
-    position: fixed;
+    position: fixed; */
     z-index: 999;
     background: #fff;
     border-radius: 2px;
@@ -15,7 +15,7 @@
     width: 100%;
     padding: 2rem;
     font-size: 1.3rem;
-    height: 250px;
+    height: 350px;
 }
 .tableCsv{
     overflow-y: scroll;
