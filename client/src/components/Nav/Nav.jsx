@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 import houseIconWhite  from '../../assets/houseIconWhite.jpg';
 import houseIconBlue  from '../../assets/houseIconBlue.jpg';
@@ -21,7 +21,7 @@ import "./Nav.css";
 
 const Nav = (props) => {
 
-  const [ menuActiveHome, setMenuActiveHome] = useState(false);
+  const [ menuActiveHome, setMenuActiveHome] = useState(true);
   const [ menuActiveUp, setMenuActiveUp] = useState(false);
   const [ menuActiveUsers, setMenuActiveUsers] = useState(false);
   const [ menuActiveSettings, setMenuActiveSettings] = useState(false);
@@ -57,10 +57,11 @@ const Nav = (props) => {
     setMenuActiveUp(false);
     setMenuActiveUsers(false);
   }
+  const location = useLocation();
 
   return (<nav>
     <ul className="list-container">
-      <Link to="/"><li onClick={setMenuStateHome} className={`${menuActiveHome ? "li-houseClick" : "li-house"}`}><img className="house-icon" src={`${menuActiveHome ? houseIconWhite : houseIconBlue}`} alt="houseIcon" />Home</li></Link>
+      <Link to="/home" ><li className={`${ location ==="/home" ? "li-houseClick" : "li-house"}`}><img className="house-icon" src={`${ location ==="/home" ? houseIconWhite : houseIconBlue}`} alt="houseIcon" />Home</li></Link>
       <Link to="/reporting"><li onClick={setMenuStateUp} className={`${menuActiveUp ? "li-upClick" : "li-up"}`}><img className="up-icon" src={`${menuActiveUp ? upIconWhite : upIconBlue}`} alt="upIcon" />Reporte</li></Link>
       <Link to="/staff"><li onClick={setMenuStateUSers} className={`${menuActiveUsers ? "li-userClick" : "li-user"}`}><img className="user-icon" src={`${menuActiveUsers ? usersIconWhite : usersIconBlue}`} alt="usersIcon" />Empleados</li></Link>     
       <Link to="/config"><li onClick={setMenuStateSettings} className={`${menuActiveSettings ? "li-settingsClick" : "li-settings"}`}><img className="settings-icon" src={`${menuActiveSettings ? settingsIconWhite : settingsIconBlue}`} alt="settingsIcon" />Configuraciones</li></Link> 
