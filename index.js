@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 
-const port = process.env.PORT || 4000; //3000 para el front y 4000 para el back
+const port =  4000; //3000 para el front y 4000 para el back
 app.use(cors());
 
 app.use(express.urlencoded({extended:false}))
