@@ -35,7 +35,7 @@ const Staff_add = () => {
               </button>
     </Link>
     <h2>Empleados</h2>
-    <CSVreader setData={setData} info={data}/>
+    <CSVreader data={data} setData={setData} info={data}/>
     <Register data={data} setData={setData}/>
     <TableCsv columns={columns} data={data} close={()=>{setData([])}}/>
   </div>);

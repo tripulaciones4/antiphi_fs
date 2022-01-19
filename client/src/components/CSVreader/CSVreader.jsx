@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import TableCsv from '../TableCsv/TableCsv';
+import React from 'react';
 import * as XLSX from 'xlsx';
 import "./CSVreader.css"
  
-const CSVreader=({setData,info})=> {
-  // const [columns, setColumns] = useState([]);
-  // const [data, setData] = useState([]);
-  const [viewerOn, setViewerOn] = useState(false)
+const CSVreader=({data,setData,info})=> {
+  
  
   // process CSV data
   const processData = dataString => {
@@ -16,14 +13,14 @@ const CSVreader=({setData,info})=> {
     const list = [];
     for (let i = 1; i < dataStringLines.length; i++) {
       const row = dataStringLines[i].split(/,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/);
-      if (headers && row.length == headers.length) {
+      if (headers && row.length === headers.length) {
         const obj = {};
         for (let j = 0; j < headers.length; j++) {
           let d = row[j];
           if (d.length > 0) {
-            if (d[0] == '"')
+            if (d[0] === '"')
               d = d.substring(1, d.length - 1);
-            if (d[d.length - 1] == '"')
+            if (d[d.length - 1] === '"')
               d = d.substring(d.length - 2, 1);
           }
           if (headers[j]) {
@@ -51,7 +48,7 @@ const CSVreader=({setData,info})=> {
   // handle file upload
   const handleFileUpload = e => {
     const file = e.target.files[0];
-    setViewerOn(true)
+    
     const reader = new FileReader();
     reader.onload = (evt) => {
       /* Parse data */
@@ -61,10 +58,10 @@ const CSVreader=({setData,info})=> {
       const wsname = wb.SheetNames[0];
       const ws = wb.Sheets[wsname];
       /* Convert array of arrays */
-      const data = XLSX.utils.sheet_to_csv(ws, { header: 1 });
+      const dataCSV = XLSX.utils.sheet_to_csv(ws, { header: 1 });
       
-      const newdata = data.con
-      processData(data);
+      const newData = dataCSV.concat(data)
+      processData(newData);
       
     };
     reader.readAsBinaryString(file);

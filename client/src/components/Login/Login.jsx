@@ -38,7 +38,7 @@ const Login = () => {
         <div className="center">
         <div className="container">
             <div>
-                <img className="logo" src={logo}/>
+                <img className="logo" src={logo} alt="Logo Antiphi"/>
             </div>
             
 
@@ -75,7 +75,7 @@ const Login = () => {
             
         </div>
             <div>
-                <img className="waves" src={waves}/>
+                <img className="waves" src={waves} alt="Olas decorativas"/>
             </div>
         </div>
     );

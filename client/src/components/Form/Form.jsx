@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Form.css";
 import axios from "axios";
-import Searches from "../Searches/Searches";
 import fondo  from '../../assets/fondo.jpg';
 import { userContext } from '../../context/userContext';
 import QueryList from "../QueryList/QueryList";

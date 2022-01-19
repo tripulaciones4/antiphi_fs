@@ -8,19 +8,24 @@ const usersRouter = require('./routes/users');
 const jwt = require('jsonwebtoken');
 
 const app = express();
-const port = 4000 //3000 para el front y 4000 para el back
+
+
+const port = process.env.PORT || 4000; //3000 para el front y 4000 para el back
 app.use(cors());
 
 app.use(express.urlencoded({extended:false}))
 app.use(express.json()) // Para habilitar envio de JSON al servidor
 
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.use("/api/companies/", companiesRouter)
 app.use("/api/queries/", queriesRouter) 
 app.use("/api/users/", usersRouter)
 
-app.get('/', (req,res)=>{
-  res.send('Hola mundo')
-})
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 //Listen
 app.listen(port, () => {
