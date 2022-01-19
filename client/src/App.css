@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'SFregular';
+  src: url('./assets/fonts/SFPRODISPLAYREGULAR.OTF');
+}
+
+/* font-family: 'Lexend Deca', sans-serif; */
+/* 300 y 400 */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400&display=swap');
+
+.App {
+  display: flex;
+  height: 100vh;
+  
+}
+

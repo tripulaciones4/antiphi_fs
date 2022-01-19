@@ -1,0 +1,42 @@
+.title-grafic{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    padding-top: 27px;
+    padding-left: 47px;
+    padding-right: 57px; 
+}
+
+.title-grafic h2{
+    font-family: 'SFregular'; 
+    color:#2D3982; 
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0px;
+}
+
+.title-grafic p{    
+    font-family: 'SFregular'; 
+    color:#2D3982; 
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0px;
+}
+
+.elem-grafic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1171px;
+    height: 227.91px;
+    
+}

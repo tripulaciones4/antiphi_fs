@@ -1,0 +1,106 @@
+
+
+/*Contenedor de los links*/
+
+.list-container{
+    margin-top: 0px;
+    padding-left: 23px;
+    padding-right: 38px;
+    height: 196px;  
+    width: 176px;
+}
+
+/*Links*/
+
+li{
+  /* border:1px solid red; */
+  list-style: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 50px;  
+  margin-bottom: 12px;  
+}
+
+/*li normal*/
+.li-house{
+    background-color: white;
+    width: 108px; 
+    color:#2D3982;   
+    font-family: 'SFregular';
+    font-size: 18px;
+}
+/*li cuando se ha hecho click*/
+.li-houseClick{
+    background-color: #00B9AD;
+    width: 108px; 
+    color: white;   
+    font-family: 'SFregular';
+    font-size: 18px;
+}
+
+.li-up{
+    width: 122px;
+}
+
+.li-user{
+    width: 147px;
+}  
+
+.li-settings{
+    width: 180px;
+}
+
+/*Enlaces*/
+
+nav ul a{
+    text-decoration: none;
+    color:white;
+    font-size: 18px;
+    font-family: 'SFregular';     
+    font-style: regular;
+    font-weight: regular;
+}
+
+
+
+/*Iconos*/
+
+.house-icon{
+    /* border:1px solid purple; */
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;
+}
+
+.up-icon{
+    /* border:1px solid blueviolet; */
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+.user-icon{
+    /* border:1px solid blue; */
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+.settings-icon{
+    /* border:1px solid lightcoral; */
+    height: 24px;
+    width: 24px;
+    margin-right: 5px; 
+}
+
+
+/*Olas*/
+.img-olas{
+    position: fixed;
+    width: 237px;
+    height: 32px;
+    bottom: 0px;
+    left: 0px;
+}
