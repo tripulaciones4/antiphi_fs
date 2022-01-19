@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Form.css";
-import axios from "axios";
 import fondo  from '../../assets/fondo.jpg';
 import { userContext } from '../../context/userContext';
+import axios from "axios";
 import QueryList from "../QueryList/QueryList";
 
 const Form = () => {
@@ -23,12 +23,17 @@ const Form = () => {
 
     const  handleSubmit =async event=> {
         event.preventDefault();
-        console.log(search_form.current.search.value);
-        let query= await axios.post('http://localhost:4000/api/queries/create',
+        const url= search_form.current.search.value
+        
+        const queryDataMachine= await axios.get(`https://desafiotripulaciones4.pythonanywhere.com?url=${url}`)
+        
+        const resDataMachine = queryDataMachine.data
+        
+        const query= await axios.post('http://localhost:4000/api/queries/create',
             {           
-                url: search_form.current.search.value,
-                analysis_result:"physhing",
-                id_user:user.id_user
+                url: resDataMachine.url,
+                analysis_result: resDataMachine.result,
+                id_user: user.id_user
             },{
             headers: {'access-token': user.token}
             })
