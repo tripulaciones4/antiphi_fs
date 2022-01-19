@@ -16,55 +16,32 @@ import usersIconBlue  from '../../assets/usersIconBlue.jpg';
 import olasDashboard  from '../../assets/olasDashboard.jpg';
 import "./Nav.css";
 
-// import { userContext} from '../../context/userContext';
 
 
 const Nav = (props) => {
+  
+  const location = useLocation().pathname;
 
-  const [ menuActiveHome, setMenuActiveHome] = useState(true);
-  const [ menuActiveUp, setMenuActiveUp] = useState(false);
-  const [ menuActiveUsers, setMenuActiveUsers] = useState(false);
-  const [ menuActiveSettings, setMenuActiveSettings] = useState(false);
-
-  const setMenuStateHome = (event)=>{
-    event.preventDefault();
-    menuActiveHome === false ? setMenuActiveHome(true) : setMenuActiveHome(false);
-    setMenuActiveUp(false);
-    setMenuActiveUsers(false);
-    setMenuActiveSettings(false)
-  }
-
-  const setMenuStateUp = (event)=>{
-    event.preventDefault();
-    menuActiveUp === false ? setMenuActiveUp(true) : setMenuActiveUp(false);
-    setMenuActiveHome(false);
-    setMenuActiveUsers(false);
-    setMenuActiveSettings(false)
-  }
-
-  const setMenuStateUSers = (event)=>{
-    event.preventDefault();
-    menuActiveUsers === false ? setMenuActiveUsers(true) : setMenuActiveUsers(false);
-    setMenuActiveHome(false);
-    setMenuActiveUp(false);
-    setMenuActiveSettings(false)
-  }
-
-  const setMenuStateSettings = (event)=>{
-    event.preventDefault();
-    menuActiveSettings === false ? setMenuActiveSettings(true) : setMenuActiveSettings(false);
-    setMenuActiveHome(false);
-    setMenuActiveUp(false);
-    setMenuActiveUsers(false);
-  }
-  const location = useLocation();
 
   return (<nav>
     <ul className="list-container">
       <Link to="/home" ><li className={`${ location ==="/home" ? "li-houseClick" : "li-house"}`}><img className="house-icon" src={`${ location ==="/home" ? houseIconWhite : houseIconBlue}`} alt="houseIcon" />Home</li></Link>
-      <Link to="/reporting"><li onClick={setMenuStateUp} className={`${menuActiveUp ? "li-upClick" : "li-up"}`}><img className="up-icon" src={`${menuActiveUp ? upIconWhite : upIconBlue}`} alt="upIcon" />Reporte</li></Link>
-      <Link to="/staff"><li onClick={setMenuStateUSers} className={`${menuActiveUsers ? "li-userClick" : "li-user"}`}><img className="user-icon" src={`${menuActiveUsers ? usersIconWhite : usersIconBlue}`} alt="usersIcon" />Empleados</li></Link>     
-      <Link to="/config"><li onClick={setMenuStateSettings} className={`${menuActiveSettings ? "li-settingsClick" : "li-settings"}`}><img className="settings-icon" src={`${menuActiveSettings ? settingsIconWhite : settingsIconBlue}`} alt="settingsIcon" />Configuraciones</li></Link> 
+
+      <Link to="/reporting">
+        <li className={`${ location ==="/reporting" ? "li-upClick" : "li-up"}`}>
+          <img className="up-icon" src={`${location ==="/reporting" ? upIconWhite : upIconBlue}`} alt="upIcon" />
+          Reporte
+        </li>
+      </Link>
+
+      <Link to="/staff"><li className={`${location ==="/staff" ? "li-userClick" : "li-user"}`}><img className="user-icon" src={`${location ==="/staff" ? usersIconWhite : usersIconBlue}`} alt="usersIcon" />Empleados</li></Link>
+
+      <Link to="/config">
+        <li className={`${location ==="/config" ? "li-settingsClick" : "li-settings"}`}>
+            <img className="settings-icon" src={`${location ==="/config" ? settingsIconWhite : settingsIconBlue}`} alt="settingsIcon" />
+          Configuraciones
+        </li>
+      </Link> 
     </ul>
     <img className="img-olas" src={olasDashboard} alt="olasDashboard" />
     
