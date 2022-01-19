@@ -24,7 +24,7 @@ app.use("/api/companies/", companiesRouter)
 app.use("/api/queries/", queriesRouter) 
 app.use("/api/users/", usersRouter)
 
-app.get('*', (req,res) =>{
+app.get('/', (req,res) =>{
   res.sendFile(path.join(__dirname+'/client/public/index.html'));
 });
 
