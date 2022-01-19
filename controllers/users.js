@@ -131,10 +131,10 @@ const users = {
     loginUser: async (req,res)=>{
         try{ 
             const {email, password} = req.body;
-            const user = await User.findOne({where:{email: email}});
+            const user = await User.findOne({where:{email: email},include:["company"]});
 
             if (user){
-                const {password:pass,email,id_company,name,last_name,id_user,department,role,createdAt} =user
+                const {password:pass,email,company,name,last_name,id_user,department,role,createdAt} =user
                 const validPass = await bcrypt.compare(password, pass);
                 if(validPass){
                     const payload = {check:true};
@@ -146,7 +146,7 @@ const users = {
                         name:name,
                         last_name: last_name,
                         email: email,
-                        id_company: id_company,
+                        company: company,
                         department:department,
                         role:role,
                         createdAt:createdAt

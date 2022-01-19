@@ -36,9 +36,9 @@ const Nav = (props) => {
 
       <Link to="/staff"><li className={`${location ==="/staff" ? "li-userClick" : "li-user"}`}><img className="user-icon" src={`${location ==="/staff" ? usersIconWhite : usersIconBlue}`} alt="usersIcon" />Empleados</li></Link>
 
-      <Link to="/config">
-        <li className={`${location ==="/config" ? "li-settingsClick" : "li-settings"}`}>
-            <img className="settings-icon" src={`${location ==="/config" ? settingsIconWhite : settingsIconBlue}`} alt="settingsIcon" />
+      <Link to="/settings">
+        <li className={`${location ==="/settings" ? "li-settingsClick" : "li-settings"}`}>
+            <img className="settings-icon" src={`${location ==="/settings" ? settingsIconWhite : settingsIconBlue}`} alt="settingsIcon" />
           Configuraciones
         </li>
       </Link> 
