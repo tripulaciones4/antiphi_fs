@@ -19,13 +19,25 @@ li{
   align-items: center;
   justify-content: center;
   height: 40px;
-  border-radius: 50px;
-  background-color: #00B9AD;
+  border-radius: 50px;  
   margin-bottom: 12px;  
 }
 
+/*li normal*/
 .li-house{
-    width: 108px;    
+    background-color: white;
+    width: 108px; 
+    color:#2D3982;   
+    font-family: 'SFregular';
+    font-size: 18px;
+}
+/*li cuando se ha hecho click*/
+.li-houseClick{
+    background-color: #00B9AD;
+    width: 108px; 
+    color: white;   
+    font-family: 'SFregular';
+    font-size: 18px;
 }
 
 .li-up{
