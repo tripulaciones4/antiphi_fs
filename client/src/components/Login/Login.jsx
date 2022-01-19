@@ -22,7 +22,7 @@ const Login = () => {
             email:login_form.current[0].value,
             password:login_form.current[1].value
         }
-        const logIn=await axios.post('http://localhost:4000/api/users/login', log_user)
+        const logIn=await axios.post('/api/users/login', log_user)
                 
         const response=logIn.data
         delete response['mensaje'];
