@@ -1,10 +1,9 @@
 import React from "react";
 import User from "../User/User";
+import "./UserList.css"
 
 
-const UserList = ({users}) => {
-
-  
+const UserList = ({users}) => { 
 
   return (
   <div>

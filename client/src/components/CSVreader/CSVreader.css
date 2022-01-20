@@ -33,7 +33,7 @@
 	font-weight:normal;
 	font-family: 'Lato';
 }
-
+/*Contenedor que contiene todo el botón*/
 .inputfileCSV + label {
     color: #c39f77;
     border-radius: 50px;
@@ -88,6 +88,7 @@
     border-bottom-color: #c39f77;
 }
 
+/*Tamaño logo*/
 .inputfileCSV + label svg {
     width: 35px;
     height: 35px;

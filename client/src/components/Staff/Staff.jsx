@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { userContext } from '../../context/userContext';
 import axios from "axios";
 import UserList from "../UserList/UserList";
+import "./Staff.css"
+import filterIcon  from '../../assets/filterIcon.jpg';
+
 
 
 const Staff = () => {
@@ -42,30 +45,36 @@ const filterList=(arr)=>{
 
 
   return (
-  <div style={{"display": "flex", alignItems: "center", justifyContent: "center",flexDirection:"column"}}>
-      <div>
-          <h2>Empleados</h2>
+  <div className="staff-container-global" >
+      <div className="div-title-staff">
+          <h2 className="employers-title-staff">Empleados</h2>
           <Link to="/staff/add">
-              <button>
+              <button className="btn-staff-add">
                 Añadir Empleados
               </button>
           </Link>
       </div>
-      <br />
-      <br />
-      <div style={{"display": "flex"} } onChange={handleChange} value={ filter || ''}>
-          <h3>Lista de Empleados</h3>
-          <button onClick={()=>setShowFilter(!showFilter)}> Vista</button>
-          {showFilter?
-          <select  name="staff_filter">
-              <option value="all" key="all" >Todos los departamentos</option>
-              {departments.map((department,i)=><option value={department} key={i}>{department}</option>)}
-          </select>
-          :null
-          }
-      </div>
 
-      <UserList users={filterList(staff)}/>
+    <div className="container-staff-radious">
+
+        <div className="header-table-staff" onChange={handleChange} value={ filter || ''}>
+              <h3>Lista de Empleados</h3>
+              <button className="btn-filter-employers"onClick={()=>setShowFilter(!showFilter)}><img className="img-filter" src={filterIcon}></img>
+                Vista</button>
+                
+              {showFilter?
+              <select className="select" name="staff_filter">
+                  <option value="all" key="all" >Todos los departamentos</option>
+                  {departments.map((department,i)=><option value={department} key={i}>{department}</option>)}
+              </select>
+              :null
+              }
+        </div>
+
+        <div className="container-global-userList"><UserList users={filterList(staff)}/></div>
+
+    </div>
+
   </div>)
 };
 
