@@ -11,6 +11,7 @@ const ReportingLegitimates = () => {
     const [legitimates, setLegitimates] = useState([])
     const [departments, setDepartments] = useState([])
     const [showFilter, setShowFilter] = useState(false)
+    const [filter, setFilter] = useState({ selected:"all"})
     
   useEffect(async() => {
     const data= await axios.get(`http://localhost:4000/api/queries/company/${user.company.id_company}`,{
@@ -21,9 +22,16 @@ const ReportingLegitimates = () => {
     data.data.mensaje?window.alert("Token inválido"):setLegitimates(data.data.filter(query=>query.analysis_result==="legitimate"))
 }, [])
 
+const filterList=(arr)=>{
+  let filtered;
+  filter.selected==="all"?
+      filtered=arr
+      :filtered= arr.filter(query=> query.user.department === filter.selected);
+  return filtered;
+}
 
-
-  
+const handleChange= e => {setFilter({ selected: e.target.value || null })};
+    
   
   
   return (<div>
@@ -35,12 +43,12 @@ const ReportingLegitimates = () => {
       <h1 className="title-reporting">Reporte-Seguras</h1>
     
       <div className="body-reporting">
-      <div className="list-searches-container">
+      <div className="list-searches-container" onChange={handleChange} value={ filter || ''}>
       <h3>Lista de Empleados</h3>
           <button onClick={()=>setShowFilter(!showFilter)}> Vista</button>
           {showFilter?
-          <select  name="staff_filter">
-              <option value="all" key="all" >Busquedas con resultado: Seguras</option>
+          <select  className="select filter_select" name="staff_filter" size={departments.length+1}>
+              <option value="all" key="all" className="filter_select_all"  >Todos los departamentos</option>
               {departments.map((department,i)=><option value={department} key={i}>{department}</option>)}
           </select>
           :null
