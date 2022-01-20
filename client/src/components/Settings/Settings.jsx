@@ -19,7 +19,7 @@ const Settings = () => {
         <div className={menu==="access"? "greenFont":null} ><h2 className="links-config">Accesos</h2></div>
         <div className={menu==="data&privacy"? "greenFont":null} ><h2 className="links-config">Data y Privacidad</h2></div>
         <div className={menu==="notifications"? "greenFont":null} ><h2 className="links-config">Notificaciones</h2></div>
-        <div className={menu==="payments"? "greenFont":null} ><h2 className="links-config">Notificaciones</h2></div>
+        <div className={menu==="payments"? "greenFont":null} ><h2 className="links-config">Pago</h2></div>
       </div>
 
 {

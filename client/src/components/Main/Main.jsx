@@ -10,6 +10,7 @@ import ReportingLegitimates from "../ReportingLegitimates/ReportingLegitimates";
 import ReportingPhyshings from "../ReportingPhyshings/ReportingPhyshings";
 import Settings from "../Settings/Settings";
 import Help from "../Help/Help";
+import "./Main.css"
 
 
 const Main = () => {
