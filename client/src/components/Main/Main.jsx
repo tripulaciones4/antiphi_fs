@@ -9,6 +9,7 @@ import {Route, Routes} from 'react-router-dom'; //Para las rutas
 import ReportingLegitimates from "../ReportingLegitimates/ReportingLegitimates";
 import ReportingPhyshings from "../ReportingPhyshings/ReportingPhyshings";
 import Settings from "../Settings/Settings";
+import Help from "../Help/Help";
 
 
 const Main = () => {
@@ -22,8 +23,8 @@ const Main = () => {
     <Route path="/reporting" element={<Reporting />} />
     <Route path="/reporting/legitimates" element={<ReportingLegitimates/>} /> 
     <Route path="/reporting/physhings" element={<ReportingPhyshings />} />   
-    <Route path="/settings" element={<Settings />} />   
-
+    <Route path="/settings" element={<Settings />} /> 
+    <Route path="/help" element={<Help />}/> 
 
   </Routes>
 
