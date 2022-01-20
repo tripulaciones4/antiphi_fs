@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { userContext } from '../../context/userContext';
 import axios from 'axios';
 import UserList from '../UserList/UserList';
@@ -14,6 +14,7 @@ const Staff = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [filter, setFilter] = useState({ selected: 'all' });
   
+  const location=useLocation()
   
   useEffect(async () => {
     try {
@@ -34,7 +35,7 @@ const Staff = () => {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [location==="/staf"]);
 
   const handleChange = e => {
     setFilter({ selected: e.target.value || null });
