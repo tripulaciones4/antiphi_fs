@@ -97,29 +97,7 @@ const Reporting = () => {
           }
         <QueryList type={"lastQueriesCompany"} queries={filterList(queries)}/>
       </div>
-
-
-
-    
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
   </div>;
