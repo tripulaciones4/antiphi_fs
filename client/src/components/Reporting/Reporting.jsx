@@ -18,7 +18,7 @@ const Reporting = () => {
     const [filter, setFilter] = useState({ selected:"all"})
     
   useEffect(async() => {
-    const data= await axios.get(`http://localhost:4000/api/queries/company/${user.company.id_company}`,{
+    const data= await axios.get(`/api/queries/company/${user.company.id_company}`,{
         headers: {'access-token': user.token}
         })
         let arrayDepartments=  data.data.map((item)=>item.user.department);

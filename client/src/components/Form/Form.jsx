@@ -23,7 +23,7 @@ const Form = () => {
     const [iconPop, setIconPop] = useState();
 
   useEffect(async() => {
-    const data= await axios.get("http://localhost:4000/api/queries/",{
+    const data= await axios.get("/api/queries/",{
         headers: {'access-token': user.token}
         })
     data.data.mensaje?window.alert("Token inválido"):setQueries(data.data)
@@ -44,7 +44,7 @@ const Form = () => {
         resDataMachine.result==="phishing"?setMessage("Te recomendamos reportar esta URL para hacer crecer la base de datos y seguir evitando las ciberamenazas")
                                             :setMessage("Continua navegando con precaución para así evitar posibles ciberamenzas")
 
-        const query= await axios.post('http://localhost:4000/api/queries/create',
+        const query= await axios.post('/api/queries/create',
             {           
                 url: resDataMachine.url,
                 analysis_result: resDataMachine.result,

@@ -40,7 +40,7 @@ const User = ({dataUser}) => {
   useEffect(async() => {
     try{
       
-      const data= await axios.get(`http://localhost:4000/api/queries/user/${id_user}`,
+      const data= await axios.get(`/api/queries/user/${id_user}`,
             {
                headers: {'access-token': user.token}
               })

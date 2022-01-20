@@ -18,7 +18,7 @@ const Staff = () => {
 
   useEffect(async() => {
     try{
-      const data= await axios.get(`http://localhost:4000/api/users/company/${user.company.id_company}`,
+      const data= await axios.get(`/api/users/company/${user.company.id_company}`,
             {
                headers: {'access-token': user.token}
               })

@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import "./QueryList.css";
 import viewIcon  from '../../assets/viewIcon.jpg';
