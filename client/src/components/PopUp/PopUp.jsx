@@ -4,7 +4,8 @@ import xClose from "../../assets/img/Xcierre.jpg"
 
 
 
-const PopUp = ({close,url,img,title,message}) => {
+
+const PopUp = ({close,url,img,title,message,analysis, login}) => {
 
 
   return (<div className="pop-up_container">
@@ -12,12 +13,12 @@ const PopUp = ({close,url,img,title,message}) => {
     <img src={img} alt="Icono Pop-Up" className="pop-up_img"/>
     <h1 className="pop-up_title">{title}</h1>
     <p className="pop-up_message">{message}</p>
-    {url?<a target="_blank" href={url}>
+    {url&&analysis==="legitimate"?<a target="_blank" href={url}>
             <button onClick={close} className="pop-up_button">
               Visitar URL
             </button>
           </a>
-        :<button onclick={close} className="pop-up_button">Finalizar</button>}
+        :<button onClick={close} className="pop-up_button">{login?"Continuar":"Finalizar"}</button>}
 
   </div>);
 };

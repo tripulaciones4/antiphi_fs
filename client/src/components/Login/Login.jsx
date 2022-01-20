@@ -1,17 +1,22 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import "./Login.css";
 import logo from "../../assets/img/LogoAntiphi.jpg"
 import waves from "../../assets/img/OlasDash.jpg"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { userContext } from '../../context/userContext';
+import PopUp from "../PopUp/PopUp";
+import popUpIconB from '../../assets/img/XPopUp.jpg'
 
 
 
-const Login = () => {
+const Login = ({popUp,close,setPopUp}) => {
 
     const {user, setUser} = useContext(userContext)
+    const [messagePop, setMessage] = useState("No se han encontrado datos de ninguna sesión iniciada, por favor identifiquese de nuevo");
+    const [title, setTitle] = useState("Datos de sesión no encontrados");
     
+
     const navigate=useNavigate()
     const login_form = useRef()
 
@@ -21,15 +26,21 @@ const Login = () => {
             email:login_form.current[0].value,
             password:login_form.current[1].value
         }
+
         const logIn=await axios.post('/api/users/login', log_user)
-                
+        if(logIn.data.message==="No matches"){
+            setTitle("Cuenta no encontrada")
+            setMessage("Antiphi no ha podido encontrar ningún usuario con esos datos.\n Por favor, verifica nuevamente tu email o contraseña.")
+            setPopUp(true)
+        }else{
         const response=logIn.data
         delete response['mensaje'];
 
         const newUser = await Object.assign(response,user)
         setUser(newUser)
-        logIn.data==="Wrong Pass!"?console.log("Contraseña o usuario incorrectos"):navigate("/home")
-
+        
+                navigate("/home")
+            }
     }
 
 
@@ -76,7 +87,12 @@ const Login = () => {
             <div>
                 <img className="waves" src={waves} alt="Olas decorativas"/>
             </div>
-        </div>
+
+
+
+        {popUp? <PopUp login={true} close={close} img={popUpIconB} title={title} message={messagePop} />
+            :null}
+    </div>
     );
 };
 

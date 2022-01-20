@@ -44,6 +44,7 @@ const User = ({dataUser}) => {
             {
                headers: {'access-token': user.token}
               })
+              console.log(data);
               setQueriesNumb(data.data.length||0)
       if(data.data.length)  {      
       const lastQuery= data.data.sort(function (a, b) {

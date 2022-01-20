@@ -1,42 +1,55 @@
 import React, { useContext } from "react";
 import { userContext } from "../../context/userContext";
+import "./Profile.css"
 
 const Profile = () => {
+  
   const {user} = useContext(userContext);
-  console.log(user);
-
+  
   const {email,company,name,last_name,department,createdAt} =user
   const incorporation=new Date(createdAt)
   var options = {  year: 'numeric', month: 'long', day: 'numeric' };
-  console.log(incorporation);
   return (
-  <div>
-        <div>
+  <div className="container-card-profile">
+        <div className="row">
+          <div className="column1">
             <h3>Nombre</h3>
             <p>{name} {last_name}</p>
-            <button>Cambiar</button>
+          </div>            
+          <button className="btn-rows">Cambiar</button>
         </div>
 
-        <div>
-            <h3>Corre electrónico</h3>
-            <p>{email}</p>
-            <button>Cambiar</button>
+        <div className="row">
+            <div className="column1">
+              <h3>Correo electrónico</h3>
+              <p>{email}</p>
+            </div>            
+            <button className="btn-rows">Cambiar</button>
         </div>
 
-        <div>
-            <h3>Empresa</h3>
-            <p>{company.name}</p>
-            <button>Cambiar</button>
+        <div className="row">
+            <div className="column1">
+              <h3>Empresa</h3>
+              <p>{company.name}</p>
+            </div>            
+            <button className="btn-rows">Cambiar</button>
         </div>
-        <div>
-          <h3>Departamento</h3>
-          <p>{department}</p>
-          <button>Cambiar</button>
-          </div>
-        <div>
-            <h3>Incorporación</h3>
-            <p>{incorporation.toLocaleDateString("es-ES", options)}</p>
+
+        <div className="row">
+            <div className="column1">
+              <h3>Departamento</h3>
+              <p>{department}</p>
+            </div>            
+            <button className="btn-rows">Cambiar</button>
         </div>
+        
+        <div className="row">
+            <div className="column1">
+              <h3>Incorporación</h3>
+              <p>{incorporation.toLocaleDateString("es-ES", options)}</p>
+            </div>            
+        </div>
+
   </div>);
 };
 

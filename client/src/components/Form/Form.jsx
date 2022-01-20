@@ -7,18 +7,24 @@ import QueryList from "../QueryList/QueryList";
 import PopUp from "../PopUp/PopUp";
 import popUpIconG  from '../../assets/img/CheckPopUp.jpg';
 import popUpIconB from '../../assets/img/XPopUp.jpg'
+import Ellipsis from '@bit/joshk.react-spinners-css.ellipsis';
+
+
 
 const Form = () => {
+    
+
 
     const {user} = useContext(userContext)
     
     const search_form = useRef()
 
-
+    
+    const [loading, setLoading] = useState(false);
     const [queries, setQueries] = useState([]);
     const [popUp, setPopUp] = useState(false);
     const [lastUrl, setLastUrl] = useState("");
-    const [message, setMessage] = useState("");
+    const [messagePop, setMessage] = useState("");
     const [title, setTitle] = useState("");
     const [iconPop, setIconPop] = useState();
 
@@ -27,16 +33,28 @@ const Form = () => {
         headers: {'access-token': user.token}
         })
     data.data.mensaje?window.alert("Token inválido"):setQueries(data.data)
-}, [])
+}, [popUp===true])
 
 
     const  handleSubmit =async event=> {
         event.preventDefault();
+        setLoading(true)
         const url= search_form.current.search.value
+        if(url.length<5||url.split(".").length<2){
+            search_form.current.search.value=""
+            setIconPop(popUpIconB)
+            setTitle("Formato URL inválido")
+            setMessage("La url introducida no es válida, debe tener un mínimo 5 caractéres")
+            setPopUp(true)
+            setLoading(false)
+            return;
+        }
         setLastUrl(url)
+                
+
         const queryDataMachine= await axios.get(`https://desafiotripulaciones4.pythonanywhere.com?url=${url}`)
         
-        const resDataMachine = queryDataMachine.data
+        const resDataMachine = await queryDataMachine.data
         resDataMachine.result==="phishing"?setIconPop(popUpIconB)
                                             :setIconPop(popUpIconG)
         resDataMachine.result==="phishing"?setTitle("No se recomienda introducir datos en este URL")
@@ -44,16 +62,19 @@ const Form = () => {
         resDataMachine.result==="phishing"?setMessage("Te recomendamos reportar esta URL para hacer crecer la base de datos y seguir evitando las ciberamenazas")
                                             :setMessage("Continua navegando con precaución para así evitar posibles ciberamenzas")
 
+
         const query= await axios.post('/api/queries/create',
             {           
                 url: resDataMachine.url,
                 analysis_result: resDataMachine.result,
                 id_user: user.id_user
             },{
+
             headers: {'access-token': user.token}
-            })
+        })
+        search_form.current.search.value=""
+        setLoading(false)
         setPopUp(true)
-        console.log(query)
                         
     };
    
@@ -79,7 +100,7 @@ const Form = () => {
                 <div className="div-container-listHome">
                
                     <div className="list-containerHome" >
-                        <h2 className="list-titleHome">Busquedas más recientes</h2>
+                        <h2 className="list-titleHome">Búsquedas más recientes</h2>
                         <QueryList className="containerListItems" key={1} type={"lastQueries"} queries={queries}/>
                     </div>
 
@@ -91,10 +112,13 @@ const Form = () => {
                     </div>
 
                 </div>
+            {loading?<Ellipsis color="#00B9AD" size={400} style={{position:"fixed"}} />:null}
+            
 
             </div>
-            {popUp? <PopUp close={()=>{setPopUp(false);setTitle("");setMessage("");setLastUrl("");setIconPop("")}} url={lastUrl} img={iconPop} title={title} message={message} />
+            {popUp? <PopUp close={()=>{setPopUp(false);setTitle("");setMessage("");setLastUrl("");setIconPop("")}} url={lastUrl} img={iconPop} title={title} message={messagePop} analysis={iconPop===popUpIconG?"legitimate":"phishing"}/>
             :null}
+        
         </div>    
     );
 };
