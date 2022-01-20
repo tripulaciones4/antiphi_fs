@@ -40,8 +40,18 @@ const Form = () => {
         event.preventDefault();
         setLoading(true)
         const url= search_form.current.search.value
+        if(url.length<5||url.split(".").length<2){
+            search_form.current.search.value=""
+            setIconPop(popUpIconB)
+            setTitle("Formato URL inválido")
+            setMessage("La url introducida no es válida, debe tener un mínimo 5 caractéres")
+            setPopUp(true)
+            setLoading(false)
+            return;
+        }
         setLastUrl(url)
-        
+                
+
         const queryDataMachine= await axios.get(`https://desafiotripulaciones4.pythonanywhere.com?url=${url}`)
         
         const resDataMachine = await queryDataMachine.data
