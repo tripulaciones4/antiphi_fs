@@ -117,7 +117,7 @@ const Reporting = () => {
         >
           <div className="container-staff-radious">
             <div className="header-table-staff">
-              <h3>Últimas busquedas de los empleados</h3>
+              <h3>Últimas búsquedas de los empleados</h3>
               <button
                 className="btn-filter-employers"
                 onClick={() => setShowFilter(!showFilter)}

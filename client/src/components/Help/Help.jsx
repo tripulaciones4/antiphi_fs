@@ -16,7 +16,7 @@ const Help = () => {
       <div id="menu-settings" className="menu-settings menu-settings2">
         <div  onClick={()=>{setMenuHelp("FAQS")}}><h2 className="profile-link">FAQS</h2></div>
         <div  onClick={()=>{setMenuHelp("contact")}}><h2 className="links-config">Contáctanos</h2></div>
-        <div  onClick={()=>{setMenuHelp("aboutUs")}}><h2 className="links-config">Sobre antiphi</h2></div>
+        <div  onClick={()=>{setMenuHelp("aboutUs")}}><h2 className="links-config">Sobre Antiphi</h2></div>
       </div>
 
       {menuHelp==="FAQS"? <FAQS/>:null}

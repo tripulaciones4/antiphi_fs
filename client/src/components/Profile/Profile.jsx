@@ -21,7 +21,7 @@ const Profile = () => {
 
         <div className="row">
             <div className="column1">
-              <h3>Corre electrónico</h3>
+              <h3>Correo electrónico</h3>
               <p>{email}</p>
             </div>            
             <button className="btn-rows">Cambiar</button>

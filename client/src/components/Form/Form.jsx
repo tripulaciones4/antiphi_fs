@@ -100,7 +100,7 @@ const Form = () => {
                 <div className="div-container-listHome">
                
                     <div className="list-containerHome" >
-                        <h2 className="list-titleHome">Busquedas más recientes</h2>
+                        <h2 className="list-titleHome">Búsquedas más recientes</h2>
                         <QueryList className="containerListItems" key={1} type={"lastQueries"} queries={queries}/>
                     </div>
 

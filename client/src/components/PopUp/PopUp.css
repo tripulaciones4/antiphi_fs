@@ -38,8 +38,8 @@
     position: absolute;
     left: 16.24%;
     right: 12.1%;
-    top: 55.84%;
-    bottom: 36.66%;
+    top: 56%;
+    bottom: 36%;
     font-family: 'SFregular';
     font-style: normal;
     font-weight: bold;
@@ -52,15 +52,16 @@
     position: absolute;
     left: 11.81%;
     right: 7.66%;
-    top: 73.94%;
-    bottom: 19.5%;
+    top: 72.94%;
+    bottom: 20.5%;
     font-family: 'SFregular';
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 21px;
     text-align: center;
     color: #000000;
+    
 }
 .pop-up_button{
     
@@ -72,8 +73,8 @@
     position: absolute;
     left: 42.56%;
     right: 34.56%;
-    top: 84.66%;
-    bottom: 9.56%;
+    top: 85.66%;
+    bottom: 8.56%;
     font-family: 'SFregular';
     font-style: normal;
     font-weight: normal;
