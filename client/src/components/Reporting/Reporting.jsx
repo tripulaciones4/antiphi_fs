@@ -15,6 +15,7 @@ const Reporting = () => {
     const [queries, setQueries] = useState([])
     const [departments, setDepartments] = useState([])
     const [showFilter, setShowFilter] = useState(false)
+    const [filter, setFilter] = useState({ selected:"all"})
     
   useEffect(async() => {
     const data= await axios.get(`http://localhost:4000/api/queries/company/${user.company.id_company}`,{
@@ -25,9 +26,18 @@ const Reporting = () => {
     data.data.mensaje?window.alert("Token inválido"):setQueries(data.data)
 }, [])
 
-const legitimates=queries.filter(query=>query.analysis_result==="legitimate")
-const physhings=queries.filter(query=>query.analysis_result==="phishing")
-  
+  const legitimates=queries.filter(query=>query.analysis_result==="legitimate")
+  const physhings=queries.filter(query=>query.analysis_result==="phishing")
+
+  const filterList=(arr)=>{
+    let filtered;
+    filter.selected==="all"?
+        filtered=arr
+        :filtered= arr.filter(query=> query.user.department === filter.selected);
+    return filtered;
+  }
+
+  const handleChange= e => {setFilter({ selected: e.target.value || null })};
 
 
   return <div className="reporting-container">
@@ -75,17 +85,17 @@ const physhings=queries.filter(query=>query.analysis_result==="phishing")
       </div>
 
       <div className="grafic-container"><Grafic /></div>
-      <div className="list-searches-container">
+      <div className="list-searches-container" onChange={handleChange} value={ filter || ''}>
       <h3>Últimas busquedas de los empleados</h3>
           <button onClick={()=>setShowFilter(!showFilter)}> Vista</button>
           {showFilter?
-          <select  name="staff_filter">
-              <option value="all" key="all" >Todos los departamentos</option>
+          <select  className="select filter_select selectReports" name="staff_filter" size={departments.length+1}>
+              <option value="all" key="all" className="filter_select_all" >Todos los departamentos</option>
               {departments.map((department,i)=><option value={department} key={i}>{department}</option>)}
           </select>
           :null
           }
-        <QueryList type={"lastQueriesCompany"} queries={queries}/>
+        <QueryList type={"lastQueriesCompany"} queries={filterList(queries)}/>
       </div>
 
 
