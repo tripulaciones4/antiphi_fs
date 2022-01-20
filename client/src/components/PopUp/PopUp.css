@@ -1,0 +1,86 @@
+.pop-up_container{
+    flex-direction: column;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+    height: 65%;
+    width: 50%;
+    border-radius: 15px;
+    left: 492px;
+    top: 168px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 0px 2000px rgba(0,0,0,0.67);
+    
+}
+.pop-up_img{
+    height: 37%;
+    
+    position: absolute;
+    left: 39.4%;
+    right: 31.4%;
+    top: 15.62%;
+    bottom: 55.84%;
+}
+.pop-up_close{
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 92.93%;
+    right: 3.62%;
+    top: 6.95%;
+    bottom: 89.3%;
+
+}
+.pop-up_title{
+    position: absolute;
+    left: 16.24%;
+    right: 12.1%;
+    top: 55.84%;
+    bottom: 36.66%;
+    font-family: 'SFregular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.pop-up_message{
+    position: absolute;
+    left: 11.81%;
+    right: 7.66%;
+    top: 73.94%;
+    bottom: 19.5%;
+    font-family: 'SFregular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+}
+.pop-up_button{
+    
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 47px;
+    position: absolute;
+    left: 42.56%;
+    right: 34.56%;
+    top: 84.66%;
+    bottom: 9.56%;
+    font-family: 'SFregular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #2D3982;
+    border-radius: 50px;
+}

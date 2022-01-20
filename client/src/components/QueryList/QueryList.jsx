@@ -1,8 +1,12 @@
+import axios from "axios";
 import React from "react";
+import "./QueryList.css";
+import viewIcon  from '../../assets/viewIcon.jpg';
+import notificationIcon from '../../assets/notificationIcon.jpg';
 
 const QueryList = ({queries,type}) => {
   
-
+  console.log(queries);
   const sortLast=(arr)=>{
     let sorted=arr.sort(function (a, b) {
       if (a.createdAt < b.createdAt) {
@@ -16,6 +20,18 @@ const QueryList = ({queries,type}) => {
     return sorted
 };
 
+const removeDuplicate= (arr)=>{
+  const duplicateOut= arr.map(e=>{
+      return [JSON.stringify(e), e]
+      }
+    )
+    let querysMapArr = new Map(duplicateOut); // Pares de clave y valor
+    let noRepeat = [...querysMapArr.values()]; // Conversión a un array
+    console.log(noRepeat);
+  return noRepeat
+};
+
+
 const sortPopular=(array)=>{
     let newArray=array.map((query)=>{
       const{url,analysis_result } =query
@@ -27,13 +43,9 @@ const sortPopular=(array)=>{
     }
   return query_recount
   })
-  const removeDuplicate= newArray.map(query=>{
-    return [JSON.stringify(query), query]
-  });
-  let querysMapArr = new Map(removeDuplicate); // Pares de clave y valor
-  let noRepeat = [...querysMapArr.values()]; // Conversión a un array
-  
-  let sorted=noRepeat.sort(function (a, b) {
+  const duplicateOut= removeDuplicate(newArray)
+    
+  let sorted=duplicateOut.sort(function (a, b) {
     if (a.many < b.many) {
         return 1;
     }
@@ -67,24 +79,42 @@ const time=(createdAt)=>{
 
 
   return (
-  <div>
-    {type==="lastQueries"?
-    sortLast(queries).map((element,i)=>
-    <div key={i}>
-      <h4>Hace {time(element.createdAt)}</h4>
-      <p>{element.url}</p>
+  <div className="list-containerHome">
+    {type==="lastQueries" ? (sortLast(queries)).slice(0,5).map((element,i)=>
+    <div className="cardList-Home" key={i}>
+
+      <div className="container-totalTimeView">
+        <img className="viewIcon" src={viewIcon} alt="viewIcon" />
+        <h4 className="totalTimeView">Hace {time(element.createdAt)}</h4>
+      </div>
+
+      <p className="elemUrl">{element.url}</p>
     </div>)
     :null}
 
 
 
     {type==="mostPopular"?
-    sortPopular(queries).map((element,i)=>
-    <div key={i}>
-      <h4>{element.many} {element.many>1?"consultas":"consulta"}.</h4>
-      <p>{element.url}</p>
+    (sortPopular(queries)).slice(0,5).map((element,i)=>
+    <div className="cardList-Home" key={i}>
+      <div className="container-totalQueries">
+        <img className="notificationIcon" src={notificationIcon} alt="notificationIcon" />
+        <h4 className="numberQueries">{element.many} {element.many>1?"consultas":"consulta"}.</h4>
+      </div>
+      <p className="elemUrl">{element.url}</p>
     </div>)
     :null}
+
+    {type==="lastQueriesCompany"? 
+    sortLast(queries).map((element,i,queries)=>
+    <div key={i}>
+      <h4>{element.url}</h4>
+      <p>{element.user.email}</p>
+      <p>Hace {time(element.createdAt)}</p>
+      <p>{queries.filter(e=>e.url===element.url).length}</p>
+      <p>{element.user.department}</p>
+    </div>
+    ):null}
 
   </div>);
 };

@@ -1,0 +1,132 @@
+.cardUser-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1171px; 
+    height: 88px;
+    border-bottom: 1px solid rgb(243, 243, 243);
+}
+
+/************************************************/
+
+.div1{
+    height: 88px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 16px;
+}
+
+.cardUser-name{
+    color:#2C2C2C;
+    font-family: 'SFregular';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.cardUser-email{
+    font-family: 'SFregular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#9F9F9F;
+    padding: 0px;
+    margin: 0px;
+}
+
+/************************************************/
+
+.div2{ 
+    display:flex;    
+    width: 275px;
+    padding-right: 16px;
+}
+
+.div-time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.div-num{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.div-departament{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+
+}
+
+.viewIcon{
+    width:16px ;
+    height: 16px;
+    margin-right: 5px;  
+}
+
+.searchtIcon{
+    width:16px ;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.documentIcon{
+    width:16px ;
+    height: 16px;
+    margin-right: 5px;
+}
+
+
+
+.cardUser-time{
+    color:s#4B4B4B;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em; 
+    padding: 0px;
+    margin: 0px; 
+    margin-right: 20px;
+}
+
+.cardUser-num{
+    color:s#4B4B4B;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em; 
+    padding: 0px;
+    margin: 0px;
+    margin-right: 20px;
+}
+
+.cardUser-departament{
+    color:s#4B4B4B;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em; 
+    padding: 0px;
+    margin: 0px;
+    margin-right: 20px;
+}
+

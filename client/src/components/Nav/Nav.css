@@ -23,34 +23,79 @@ li{
   margin-bottom: 12px;  
 }
 
-/*li normal*/
+/*********************************************************************************/
+
 .li-house{
-    background-color: white;
     width: 108px; 
+    background-color: white;
     color:#2D3982;   
     font-family: 'SFregular';
     font-size: 18px;
 }
-/*li cuando se ha hecho click*/
+
 .li-houseClick{
-    background-color: #00B9AD;
     width: 108px; 
+    background-color: #00B9AD;
     color: white;   
     font-family: 'SFregular';
     font-size: 18px;
 }
 
+/*********************************************************************************/
+
 .li-up{
     width: 122px;
+    background-color: white;
+    color:#2D3982;   
+    font-family: 'SFregular';
+    font-size: 18px;
 }
+
+.li-upClick{
+    width: 122px;
+    background-color: #00B9AD;
+    color: white;   
+    font-family: 'SFregular';
+    font-size: 18px;
+}
+
+/*********************************************************************************/
 
 .li-user{
     width: 147px;
+    background-color: white;
+    color:#2D3982;   
+    font-family: 'SFregular';
+    font-size: 18px;
 }  
+
+.li-userClick{
+    width: 147px;
+    background-color: #00B9AD;
+    color: white;   
+    font-family: 'SFregular';
+    font-size: 18px;
+}
+
+/*********************************************************************************/
 
 .li-settings{
     width: 180px;
+    background-color: white;
+    color:#2D3982;   
+    font-family: 'SFregular';
+    font-size: 18px;
 }
+
+.li-settingsClick{
+    width: 180px;
+    background-color: #00B9AD;
+    color: white;   
+    font-family: 'SFregular';
+    font-size: 18px;
+}
+
+/*********************************************************************************/
 
 /*Enlaces*/
 

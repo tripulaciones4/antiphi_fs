@@ -1,0 +1,50 @@
+.register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.input-form-user ::placeholder{
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.input-form-user{
+    height: 55px;
+    width: 571px;
+    left: 0px;
+    top: 5px;
+    border-radius: 40px;
+
+    background: #F5F5F5;
+    border: 5px solid #FFFFFF;
+    border-radius: 40px;
+    padding-left: 15px;
+    margin-bottom: 18px;
+
+}
+
+.input1{
+    margin-top:20px;
+}
+
+.btn-form-employers{
+    background: #2D3982;
+    border-radius: 50px;
+    color:white;
+    padding: 8px 47px;
+    width :145px;
+    height: 40px;
+    margin-left: 450px;
+    font-family: "SFregular";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
