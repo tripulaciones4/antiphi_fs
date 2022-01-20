@@ -8,12 +8,13 @@ import filterIcon from '../../assets/filterIcon.jpg';
 
 const Staff = () => {
   const { user } = useContext(userContext);
-
+  
   const [staff, setStaff] = useState([]);
   const [departments, setDepartments] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
   const [filter, setFilter] = useState({ selected: 'all' });
-
+  
+  
   useEffect(async () => {
     try {
       const data = await axios.get(
@@ -22,7 +23,8 @@ const Staff = () => {
           headers: { 'access-token': user.token },
         }
       );
-      let arrayDepartments = data.data.map(item => item.department);
+      const withoutUser=data.data.filter(employee => employee.email != user.email)
+      let arrayDepartments = withoutUser.map(item => item.department);
       setDepartments(
         arrayDepartments.filter(
           (value, i) => arrayDepartments.indexOf(value) === i
@@ -45,6 +47,7 @@ const Staff = () => {
       : (filtered = arr.filter(user => user.department === filter.selected));
     return filtered;
   };
+
 
   return (
     <div className="staff-container-global">

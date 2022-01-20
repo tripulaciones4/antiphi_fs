@@ -1,15 +1,16 @@
 import React, { useContext, useRef } from "react";
 import "./Login.css";
-
 import logo from "../../assets/img/LogoAntiphi.jpg"
 import waves from "../../assets/img/OlasDash.jpg"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { userContext } from '../../context/userContext';
+import PopUp from "../PopUp/PopUp";
+import popUpIconB from '../../assets/img/XPopUp.jpg'
 
 
 
-const Login = () => {
+const Login = ({popUp,close}) => {
 
     const {user, setUser} = useContext(userContext)
     
@@ -77,7 +78,12 @@ const Login = () => {
             <div>
                 <img className="waves" src={waves} alt="Olas decorativas"/>
             </div>
-        </div>
+
+
+
+        {popUp? <PopUp login={true} close={close} img={popUpIconB} title={"Datos de sesión no encontrados"} message={"No se han encontrado datos de ninguna sesión iniciada, por favor identifiquese de nuevo"} />
+            :null}
+    </div>
     );
 };
 

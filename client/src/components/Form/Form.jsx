@@ -7,18 +7,24 @@ import QueryList from "../QueryList/QueryList";
 import PopUp from "../PopUp/PopUp";
 import popUpIconG  from '../../assets/img/CheckPopUp.jpg';
 import popUpIconB from '../../assets/img/XPopUp.jpg'
+import Ellipsis from '@bit/joshk.react-spinners-css.ellipsis';
+
+
 
 const Form = () => {
+    
+
 
     const {user} = useContext(userContext)
     
     const search_form = useRef()
 
-
+    
+    const [loading, setLoading] = useState(false);
     const [queries, setQueries] = useState([]);
     const [popUp, setPopUp] = useState(false);
     const [lastUrl, setLastUrl] = useState("");
-    const [message, setMessage] = useState("");
+    const [messagePop, setMessage] = useState("");
     const [title, setTitle] = useState("");
     const [iconPop, setIconPop] = useState();
 
@@ -32,8 +38,10 @@ const Form = () => {
 
     const  handleSubmit =async event=> {
         event.preventDefault();
+        setLoading(true)
         const url= search_form.current.search.value
         setLastUrl(url)
+        
         const queryDataMachine= await axios.get(`https://desafiotripulaciones4.pythonanywhere.com?url=${url}`)
         
         const resDataMachine = queryDataMachine.data
@@ -54,6 +62,8 @@ const Form = () => {
         {
             headers: {'access-token': user.token}
         })
+        setLoading(false)
+        search_form.current.search.value=""
         setPopUp(true)
                         
     };
@@ -92,10 +102,13 @@ const Form = () => {
                     </div>
 
                 </div>
+            {loading?<Ellipsis color="#00B9AD" size={400} style={{position:"fixed"}} />:null}
+            
 
             </div>
-            {popUp? <PopUp close={()=>{setPopUp(false);setTitle("");setMessage("");setLastUrl("");setIconPop("")}} url={lastUrl} img={iconPop} title={title} message={message} analysis={iconPop===popUpIconG?"legitimate":"phishing"}/>
+            {popUp? <PopUp close={()=>{setPopUp(false);setTitle("");setMessage("");setLastUrl("");setIconPop("")}} url={lastUrl} img={iconPop} title={title} message={messagePop} analysis={iconPop===popUpIconG?"legitimate":"phishing"}/>
             :null}
+        
         </div>    
     );
 };
