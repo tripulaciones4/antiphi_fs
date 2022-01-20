@@ -27,6 +27,7 @@ const removeDuplicate= (arr)=>{
     )
     let querysMapArr = new Map(duplicateOut); // Pares de clave y valor
     let noRepeat = [...querysMapArr.values()]; // Conversión a un array
+    console.log(noRepeat);
   return noRepeat
 };
 
@@ -79,7 +80,7 @@ const time=(createdAt)=>{
 
   return (
   <div className="list-containerHome">
-    {type==="lastQueries" ? sortLast(queries).map((element,i)=>
+    {type==="lastQueries" ? (sortLast(queries)).slice(0,5).map((element,i)=>
     <div className="cardList-Home" key={i}>
 
       <div className="container-totalTimeView">
@@ -94,7 +95,7 @@ const time=(createdAt)=>{
 
 
     {type==="mostPopular"?
-    sortPopular(queries).map((element,i)=>
+    (sortPopular(queries)).slice(0,5).map((element,i)=>
     <div className="cardList-Home" key={i}>
       <div className="container-totalQueries">
         <img className="notificationIcon" src={notificationIcon} alt="notificationIcon" />

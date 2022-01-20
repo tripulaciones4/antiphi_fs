@@ -4,9 +4,13 @@ import "./TableCsv.css"
 import axios from "axios";
 import { userContext } from '../../context/userContext';
 import { useNavigate } from "react-router-dom";
+import PopUp from "../PopUp/PopUp";
+import iconPopUpAdd from "../../assets/img/AddEmployee.jpg"
 
 
 const TableCsv = ({columns,data,close}) => {
+
+  const [popUp, setPopUp] = useState(false);
 
   const {user} = useContext(userContext)
   const [input, setInput] = useState("")
@@ -14,24 +18,28 @@ const TableCsv = ({columns,data,close}) => {
   const navigate=useNavigate()
 
   const createUsers=async (password)=>{
-    if(input){
-      data.map(async(element)=>{
-      element.id_company=user.id_company
+    try{if(input){
+     data.map(async(element)=>{
+      element.id_company=user.company.id_company
       element.password=password
       element.role="employee"
-      await axios.post('http://localhost:4000/api/users/create', element)
+      const res= await axios.post('http://localhost:4000/api/users/create', element)
+      console.log(res)
     })
+
     await setInput("")
     await close()
-    console.log("Usuarios dados de alta con exito")
-    navigate("/staff")
+    setPopUp(true)
+    // navigate("/staff")
     
 
   }else{
     return alert("Introduzca una contraseña genérica para sus usuarios")
+  }}catch(err){
+    console.log(err)
   }}
 
-  return <div className="windowCsv">
+  return (<div className="windowCsv">
     
       <h4>Empleados añadidos</h4>
       <button onClick={()=>close()}>Borrar</button>
@@ -46,7 +54,9 @@ const TableCsv = ({columns,data,close}) => {
     </div>
 <input type="password" onChange={handleChange} placeholder="Contraseña genérica"/>
 <button onClick={()=>createUsers(input)} >Finalizar</button>
-</div>;
+{popUp? <PopUp close={()=>{setPopUp(false);navigate("/staff")}} img={iconPopUpAdd} title={"Añadido correctamente"} message={"Añadiste un nuevo empleado a la base de datos, ahora podra asegurarse antes de introducir cualquier dato en URL's sospechosas"} />
+            :null}
+</div>);
 };
 
 export default TableCsv;
