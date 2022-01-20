@@ -76,7 +76,7 @@ const QueryList = ({queries,type}) => {
     <div className="list-containerHome">
       {type === 'lastQueries'
         ? sortLast(queries)
-            .slice(0, 5)
+            .slice(0, 10)
             .map((element, i) => (
               <div className="cardList-Home" key={i}>
                 <div className="container-totalTimeView">
@@ -93,7 +93,7 @@ const QueryList = ({queries,type}) => {
 
       {type === 'mostPopular'
         ? sortPopular(queries)
-            .slice(0, 5)
+            .slice(0, 10)
             .map((element, i) => (
               <div className="cardList-Home" key={i}>
                 <div className="container-totalQueries">

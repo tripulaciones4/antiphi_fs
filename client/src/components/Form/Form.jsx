@@ -54,7 +54,6 @@ const Form = () => {
         {
             headers: {'access-token': user.token}
         })
-        
         setPopUp(true)
                         
     };
