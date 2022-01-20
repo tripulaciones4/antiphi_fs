@@ -72,7 +72,13 @@ body{
     margin-bottom: 20px;
 }
 
-input::placeholder{
+.input_password::placeholder{
+    font-family: 'Lexend Deca', sans-serif;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.input_email::placeholder{
     font-family: 'Lexend Deca', sans-serif;
     color: #FFFFFF;
     font-size: 14px;
