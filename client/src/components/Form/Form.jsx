@@ -33,7 +33,7 @@ const Form = () => {
         headers: {'access-token': user.token}
         })
     data.data.mensaje?window.alert("Token inválido"):setQueries(data.data)
-}, [])
+}, [popUp===true])
 
 
     const  handleSubmit =async event=> {
@@ -44,7 +44,7 @@ const Form = () => {
         
         const queryDataMachine= await axios.get(`https://desafiotripulaciones4.pythonanywhere.com?url=${url}`)
         
-        const resDataMachine = queryDataMachine.data
+        const resDataMachine = await queryDataMachine.data
         resDataMachine.result==="phishing"?setIconPop(popUpIconB)
                                             :setIconPop(popUpIconG)
         resDataMachine.result==="phishing"?setTitle("No se recomienda introducir datos en este URL")
@@ -62,8 +62,8 @@ const Form = () => {
         {
             headers: {'access-token': user.token}
         })
-        setLoading(false)
         search_form.current.search.value=""
+        setLoading(false)
         setPopUp(true)
                         
     };
