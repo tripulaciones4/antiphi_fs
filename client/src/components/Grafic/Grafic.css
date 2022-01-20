@@ -6,6 +6,7 @@
     padding-top: 27px;
     padding-left: 47px;
     padding-right: 57px; 
+
 }
 
 .title-grafic h2{
@@ -33,10 +34,16 @@
 }
 
 .elem-grafic{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin:0px;
+
     width: 1171px;
-    height: 227.91px;
+    height: 320px;
+
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    
+
     
 }
