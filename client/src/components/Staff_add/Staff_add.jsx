@@ -7,6 +7,8 @@ import Register from '../Register/Register'
 const Staff_add = () => {
   const [data, setData] = useState([]);
 
+    
+
   const columns = [
     {
         name: 'Nombre',
@@ -38,6 +40,7 @@ const Staff_add = () => {
     <CSVreader data={data} setData={setData} info={data}/>
     <Register data={data} setData={setData}/>
     <TableCsv columns={columns} data={data} close={()=>{setData([])}}/>
+    
   </div>);
 };
 
