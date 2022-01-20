@@ -127,7 +127,7 @@ const QueryList = ({queries,type}) => {
                 
               <div className="div-time">
                 <img className="viewIcon" src={viewIcon} alt="viewIcon" />
-                <p className="cardUser-time" >Hace {time(element.createdAt)}</p>
+                <p className="cardUser-time" >{time(element.createdAt)}</p>
               </div>
 
               <div className="div-num" >
