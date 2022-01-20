@@ -28,8 +28,6 @@ const QueryList = ({queries,type}) => {
     let noRepeat = [...querysMapArr.values()]; // Conversión a un array
   return noRepeat
 };
-    return noRepeat;
-  };
 
   const sortPopular = array => {
     let newArray = array.map(query => {
