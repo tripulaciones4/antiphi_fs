@@ -31,7 +31,6 @@ const Staff = () => {
           (value, i) => arrayDepartments.indexOf(value) === i
         )
       );
-      console.log(data.data);
       setStaff(data.data);
     } catch (err) {
       console.log(err);
