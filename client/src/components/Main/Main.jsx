@@ -32,7 +32,7 @@ const Main = () => {
 
   return (<main>  
   <Routes>    
-    <Route path="/" element={<Login close={()=>setPopUp(false)} popUp={popUp}/>} />    
+    <Route path="/" element={<Login close={()=>setPopUp(false)} popUp={popUp} setPopUp={(e)=>setPopUp(e)}/>} />    
     <Route path="/home" element={<Form />} />
     <Route path="/staff" element={<Staff/>} />
     <Route path="/staff/add" element={<StaffAdd/>} />    

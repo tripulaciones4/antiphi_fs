@@ -64,7 +64,7 @@ const ReportingPhyshings = () => {
         >
           <div className="container-staff-radious addPadding">
           <div className="header-table-staff">
-            <h3>Lista de Empleados</h3>
+            <h3>Búsquedas con resultado: Maliciosas</h3>
             <button
               className="btn-filter-employers"
               onClick={() => setShowFilter(!showFilter)}

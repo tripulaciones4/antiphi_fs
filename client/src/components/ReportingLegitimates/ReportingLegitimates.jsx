@@ -64,7 +64,7 @@ const ReportingLegitimates = () => {
         >
           <div className="container-staff-radious addPadding">
           <div className="header-table-staff">
-            <h3>Busquedas con resultado: Seguras</h3>
+            <h3>Búsquedas con resultado: Seguras</h3>
             <button
               className="btn-filter-employers"
               onClick={() => setShowFilter(!showFilter)}
