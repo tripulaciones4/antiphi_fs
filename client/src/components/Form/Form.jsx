@@ -44,16 +44,18 @@ const Form = () => {
         resDataMachine.result==="phishing"?setMessage("Te recomendamos reportar esta URL para hacer crecer la base de datos y seguir evitando las ciberamenazas")
                                             :setMessage("Continua navegando con precaución para así evitar posibles ciberamenzas")
 
-        const query= await axios.post('http://localhost:4000/api/queries/create',
-            {           
-                url: resDataMachine.url,
-                analysis_result: resDataMachine.result,
-                id_user: user.id_user
-            },{
+        const query= {           
+            url: resDataMachine.url,
+            analysis_result: resDataMachine.result,
+            id_user: user.id_user
+        }
+
+        await axios.post('http://localhost:4000/api/queries/create', query,
+        {
             headers: {'access-token': user.token}
-            })
+        })
+        
         setPopUp(true)
-        console.log(query)
                         
     };
    
@@ -93,7 +95,7 @@ const Form = () => {
                 </div>
 
             </div>
-            {popUp? <PopUp close={()=>{setPopUp(false);setTitle("");setMessage("");setLastUrl("");setIconPop("")}} url={lastUrl} img={iconPop} title={title} message={message} />
+            {popUp? <PopUp close={()=>{setPopUp(false);setTitle("");setMessage("");setLastUrl("");setIconPop("")}} url={lastUrl} img={iconPop} title={title} message={message} analysis={iconPop===popUpIconG?"legitimate":"phishing"}/>
             :null}
         </div>    
     );

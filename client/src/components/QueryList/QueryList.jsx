@@ -4,10 +4,11 @@ import './QueryList.css';
 import viewIcon from '../../assets/viewIcon.jpg';
 import notificationIcon from '../../assets/notificationIcon.jpg';
 
-const QueryList = ({ queries, type }) => {
-  console.log(queries);
-  const sortLast = arr => {
-    let sorted = arr.sort(function (a, b) {
+
+const QueryList = ({queries,type}) => {
+  
+  const sortLast=(arr)=>{
+    let sorted=arr.sort(function (a, b) {
       if (a.createdAt < b.createdAt) {
         return 1;
       }
@@ -25,7 +26,8 @@ const QueryList = ({ queries, type }) => {
     });
     let querysMapArr = new Map(duplicateOut); // Pares de clave y valor
     let noRepeat = [...querysMapArr.values()]; // Conversión a un array
-    console.log(noRepeat);
+  return noRepeat
+};
     return noRepeat;
   };
 

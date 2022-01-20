@@ -3,13 +3,12 @@ import { userContext } from "../../context/userContext";
 import "./Profile.css"
 
 const Profile = () => {
+  
   const {user} = useContext(userContext);
-  console.log(user);
-
+  
   const {email,company,name,last_name,department,createdAt} =user
   const incorporation=new Date(createdAt)
   var options = {  year: 'numeric', month: 'long', day: 'numeric' };
-  console.log(incorporation);
   return (
   <div className="container-card-profile">
         <div className="row">
