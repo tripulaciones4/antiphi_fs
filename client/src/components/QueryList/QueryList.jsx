@@ -6,7 +6,6 @@ import notificationIcon from '../../assets/notificationIcon.jpg';
 
 const QueryList = ({queries,type}) => {
   
-  console.log(queries);
   const sortLast=(arr)=>{
     let sorted=arr.sort(function (a, b) {
       if (a.createdAt < b.createdAt) {
@@ -27,7 +26,6 @@ const removeDuplicate= (arr)=>{
     )
     let querysMapArr = new Map(duplicateOut); // Pares de clave y valor
     let noRepeat = [...querysMapArr.values()]; // Conversión a un array
-    console.log(noRepeat);
   return noRepeat
 };
 

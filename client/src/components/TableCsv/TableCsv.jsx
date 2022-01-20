@@ -24,14 +24,12 @@ const TableCsv = ({columns,data,close}) => {
       element.id_company=user.company.id_company
       element.password=password
       element.role="employee"
-      const res= await axios.post('http://localhost:4000/api/users/create', element)
-      console.log(res)
+      await axios.post('http://localhost:4000/api/users/create', element)
     })
 
     await setInput("")
     await close()
     setPopUp(true)
-    // navigate("/staff")
     
 
   }else{
@@ -56,7 +54,7 @@ const TableCsv = ({columns,data,close}) => {
     </div>
 <input className="input-table-password" type="password" onChange={handleChange} placeholder="Contraseña genérica"/>
 <button className="input-finish" onClick={()=>createUsers(input)} >Finalizar</button>
-{popUp? <PopUp close={()=>{setPopUp(false);navigate("/staff")}} img={iconPopUpAdd} title={"Añadido correctamente"} message={"Añadiste un nuevo empleado a la base de datos, ahora podra asegurarse antes de introducir cualquier dato en URL's sospechosas"} />
+{popUp? <PopUp close={()=>{setPopUp(false); navigate("/staff")}} img={iconPopUpAdd} title={"Añadido correctamente"} message={"Añadiste un nuevo empleado a la base de datos, ahora podra asegurarse antes de introducir cualquier dato en URL's sospechosas"} />
             :null}
 </div>);
 };
