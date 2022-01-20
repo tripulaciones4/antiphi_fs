@@ -6,6 +6,7 @@ import { userContext } from '../../context/userContext';
 import { useNavigate } from "react-router-dom";
 import PopUp from "../PopUp/PopUp";
 import iconPopUpAdd from "../../assets/img/AddEmployee.jpg"
+import "./TableCsv.css"
 
 
 const TableCsv = ({columns,data,close}) => {
@@ -41,8 +42,8 @@ const TableCsv = ({columns,data,close}) => {
 
   return (<div className="windowCsv">
     
-      <h4>Empleados añadidos</h4>
-      <button onClick={()=>close()}>Borrar</button>
+      <h4 className="title-table">Empleados añadidos</h4>
+      <button className="btn-delete-table" onClick={()=>close()}>Borrar</button>
     
     <div className="tableCsv">
     <DataTable
@@ -52,8 +53,8 @@ const TableCsv = ({columns,data,close}) => {
     data={data}
     />
     </div>
-<input type="password" onChange={handleChange} placeholder="Contraseña genérica"/>
-<button onClick={()=>createUsers(input)} >Finalizar</button>
+<input className="input-table-password" type="password" onChange={handleChange} placeholder="Contraseña genérica"/>
+<button className="input-finish" onClick={()=>createUsers(input)} >Finalizar</button>
 {popUp? <PopUp close={()=>{setPopUp(false);navigate("/staff")}} img={iconPopUpAdd} title={"Añadido correctamente"} message={"Añadiste un nuevo empleado a la base de datos, ahora podra asegurarse antes de introducir cualquier dato en URL's sospechosas"} />
             :null}
 </div>);

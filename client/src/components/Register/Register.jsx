@@ -24,46 +24,19 @@ const Register = ({data,setData}) => {
 
     return (
         <div>
-            <h2>Registro</h2>
 
-            <form ref={register_form}>
+            <form className="register-form" ref={register_form}>
 
-                <label htmlFor="name">Nombre</label>
-                <br />
-                <input type="text" name="name" placeholder="Introduce nombre para añadir" />
-                <br />
-                <label htmlFor="last_name">Apellido</label>
-                <br />
-                <input type="text" name="last_name" placeholder="Introduce apellido para añadir" />
-                <br />
+                <input className="input-form-user input1" type="text" name="name" placeholder="Nombre" />            
+                
+                <input className="input-form-user" type="text" name="last_name" placeholder= "Apellido" />
+                
+                <input className="input-form-user" type="email" name="email" placeholder="Empleado1@empresa.com" />
+                
+                <input className="input-form-user" type="text" name="department" placeholder="Contabilidad" />
+                
 
-                <label htmlFor="email">Email</label>
-                <br />
-                <input type="email" name="email" placeholder="Introduce email para añadir" />
-                <br />
-                <label htmlFor="department">Departamento</label>
-                <br />
-                <input type="text" name="department" placeholder="Introduce departamento para añadir" />
-                <br />
-
-                {/* <label htmlFor="password">Indroduzca su contraseña</label>
-                <br />
-                <input type="password" name="password" placeholder="Password" />
-                <br />
-
-                <label htmlFor="password_repeat">Repita su contraseña</label>
-                <br />
-                <input type="password" name="password_repeat" placeholder="Password" />
-                <br /> */
-
-                /* <label htmlFor="account">Tipo de cuenta:</label><br />
-                <select name="cars" id="cars"><br />
-                    <option value="company">Empresa</option><br />
-                    <option value="user">Usario</option><br />
-                    
-                </select><br /><br /> */}
-
-                <button type="button" onClick={handleSubmit}>Añadir</button>
+                <button className="btn-form-employers" type="button" onClick={handleSubmit}>Añadir</button>
             </form>
         </div>
     );

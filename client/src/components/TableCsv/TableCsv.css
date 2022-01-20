@@ -1,9 +1,5 @@
 .windowCsv{
-    /* left: 0;
-    bottom: 0;
-    right: 0;
-    top: 0;
-    position: fixed; */
+
     z-index: 999;
     background: #fff;
     border-radius: 2px;
@@ -16,8 +12,45 @@
     padding: 2rem;
     font-size: 1.3rem;
     height: 350px;
+    box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.04);
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 0px;
+    margin-left: 30px;
 }
 .tableCsv{
     overflow-y: scroll;
     height: 200px;
+}
+
+.title-table{
+    font-family: SFregular;
+    color:#2C2C2C;
+}
+
+.btn-delete-table{
+    background: #2D3982;
+    font-family: SFregular;
+    border-radius: 50px;
+    color:white;
+    padding: 8px 20px;
+    font-size: 15px;
+    border:0px;
+}
+
+
+.input-table-password{
+    border:1px solid lightgrey;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.input-finish{
+    background: #2D3982;
+    font-family: SFregular;
+    border-radius: 50px;
+    color:white;
+    padding: 8px 20px;
+    font-size: 15px;
+    border:0px;
 }

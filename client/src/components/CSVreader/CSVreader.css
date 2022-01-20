@@ -5,6 +5,7 @@
     overflow: hidden;
     position: absolute;
     z-index: -1;
+   
 }
 
 .inputfile + label {
@@ -17,6 +18,9 @@
     display: inline-block;
     overflow: visible;
     padding: 0.625rem 1.25rem;
+    font-family: SFregular;
+
+
 }
 
 .inputfile + label svg {
@@ -35,7 +39,7 @@
 }
 /*Contenedor que contiene todo el botón*/
 .inputfileCSV + label {
-    color: #c39f77;
+    color: #2D3982;
     border-radius: 50px;
     border-style: solid;
 }
@@ -92,5 +96,5 @@
 .inputfileCSV + label svg {
     width: 35px;
     height: 35px;
-    fill: rgb(0, 251, 176);
+    fill:#00B9AD;
 }
