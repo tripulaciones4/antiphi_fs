@@ -7,6 +7,7 @@ import './Staff.css';
 import filterIcon from '../../assets/filterIcon.jpg';
 
 const Staff = () => {
+
   const { user } = useContext(userContext);
   
   const [staff, setStaff] = useState([]);
@@ -19,7 +20,7 @@ const Staff = () => {
   useEffect(async () => {
     try {
       const data = await axios.get(
-        `http://localhost:4000/api/users/company/${user.company.id_company}`,
+        `/api/users/company/${user.company.id_company}`,
         {
           headers: { 'access-token': user.token },
         }

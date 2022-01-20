@@ -24,7 +24,8 @@ const TableCsv = ({columns,data,close}) => {
       element.id_company=user.company.id_company
       element.password=password
       element.role="employee"
-      await axios.post('http://localhost:4000/api/users/create', element)
+
+      const res= await axios.post('/api/users/create', element)
     })
 
     await setInput("")

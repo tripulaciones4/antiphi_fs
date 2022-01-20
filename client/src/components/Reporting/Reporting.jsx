@@ -8,6 +8,7 @@ import { userContext } from '../../context/userContext';
 import axios from 'axios';
 
 const Reporting = () => {
+
   const { user } = useContext(userContext);
 
   const [queries, setQueries] = useState([]);
@@ -17,7 +18,7 @@ const Reporting = () => {
 
   useEffect(async () => {
     const data = await axios.get(
-      `http://localhost:4000/api/queries/company/${user.company.id_company}`,
+      `/api/queries/company/${user.company.id_company}`,
       {
         headers: { 'access-token': user.token },
       }
@@ -39,6 +40,8 @@ const Reporting = () => {
   );
 
   const filterList = arr => {
+
+
     let filtered;
     filter.selected === 'all'
       ? (filtered = arr)

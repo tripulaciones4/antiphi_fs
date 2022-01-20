@@ -13,9 +13,10 @@ const ReportingPhyshings = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [filter, setFilter] = useState({ selected: 'all' });
 
+
   useEffect(async () => {
     const data = await axios.get(
-      `http://localhost:4000/api/queries/company/${user.company.id_company}`,
+      `/api/queries/company/${user.company.id_company}`,
       {
         headers: { 'access-token': user.token },
       }
@@ -54,6 +55,7 @@ const ReportingPhyshings = () => {
           <img className="arrow-icon" src={backIcon} alt="arrowIcon" />
         </Link>
         <h1 className="title-reporting">Reporte-Maliciosas</h1>
+
       </div>
 
       

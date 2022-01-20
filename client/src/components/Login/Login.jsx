@@ -26,7 +26,8 @@ const Login = ({popUp,close,setPopUp}) => {
             email:login_form.current[0].value,
             password:login_form.current[1].value
         }
-        const logIn=await axios.post('http://localhost:4000/api/users/login', log_user)
+
+        const logIn=await axios.post('/api/users/login', log_user)
         if(logIn.data.message==="No matches"){
             setTitle("Cuenta no encontrada")
             setMessage("Antiphi no ha podido encontrar ningún usuario con esos datos.\n Por favor, verifica nuevamente tu email o contraseña.")

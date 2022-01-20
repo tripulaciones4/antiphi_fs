@@ -7,6 +7,7 @@ import backIcon from '../../assets/backIcon.jpg';
 import axios from 'axios';
 
 const ReportingLegitimates = () => {
+
   const { user } = useContext(userContext);
   const [legitimates, setLegitimates] = useState([]);
   const [departments, setDepartments] = useState([]);
@@ -15,7 +16,7 @@ const ReportingLegitimates = () => {
 
   useEffect(async () => {
     const data = await axios.get(
-      `http://localhost:4000/api/queries/company/${user.company.id_company}`,
+      `/api/queries/company/${user.company.id_company}`,
       {
         headers: { 'access-token': user.token },
       }
