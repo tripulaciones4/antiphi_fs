@@ -1,13 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { userContext } from '../../context/userContext';
+import "./User.css";
+import viewIcon from '../../assets/viewIcon.jpg';
+import documentIcon from '../../assets/documentIcon.jpg';
+import searchIcon from '../../assets/searchIcon.jpg';
+
+
 
 const User = ({dataUser}) => {
 
   const {user} = useContext(userContext)
   
   const {email,name,last_name,id_user,department} =dataUser
-  const [lastQueryTime, setLastQueryTime] = useState("Ninguna busqueda registrada.");
+  const [lastQueryTime, setLastQueryTime] = useState("/");
   const [queriesNumb, setQueriesNumb] = useState();
   
 
@@ -57,17 +63,35 @@ const User = ({dataUser}) => {
   }
 }, [])
       
-
-
-
-
     return(
-      <div>
-        <h5>{name} {last_name}</h5>
-        <p>{email}</p>
-        <p>{lastQueryTime}</p>
-        <p>{queriesNumb} busquedas</p>
-        <p>{department}</p>
+      <div className="cardUser-container">
+        
+        <div className="div1">
+          <h5 className="cardUser-name" >{name} {last_name}</h5>
+          <p className="cardUser-email">{email}</p>
+        </div>
+
+        <div className="div2">
+
+          <div className="div-time">
+            <img className="viewIcon" src={viewIcon} alt="viewIcon" />
+            <p className="cardUser-time">{lastQueryTime}</p>
+          </div>
+
+          <div className="div-num" >
+            <img className="searchtIcon" src={searchIcon} alt="searchIcon" />
+            <p className="cardUser-num">{queriesNumb}</p>
+          </div>
+
+          <div className="div-departament">
+            <img className="documentIcon" src={documentIcon} alt="documentIcon" />
+            <p className="cardUser-departament">{department}</p>
+          </div>
+          
+          
+          
+        </div>
+
       </div>);
 };
 
