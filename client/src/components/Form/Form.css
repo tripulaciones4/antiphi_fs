@@ -51,10 +51,8 @@
 
 };
 
-.input-search:focus{
+*:focus {
     outline: none;
-    background-color: #dfe;
-    border: 0;
 }
 
 .input-search[type=text]{
@@ -72,6 +70,7 @@
     height: 70px;
     width: 180px;
     cursor:pointer;
+    margin-top: -5px;
 }
 
 /****************************************************/
