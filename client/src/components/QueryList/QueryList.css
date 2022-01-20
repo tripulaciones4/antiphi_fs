@@ -8,10 +8,10 @@
   padding-left: 45px;
 }
 
-.seguras-header {
+/* .seguras-header {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .container-totalTimeView {
   display: flex;
@@ -21,7 +21,7 @@
   height: 24px;
 }
 
-.list-containerHome {
+/* .list-containerHome {
   background-color: white;
   padding: 2rem;
   border-radius: 0 0 30px 30px;
@@ -34,7 +34,7 @@
   text-align: left;
   display: grid;
   grid-template-columns: 400px 200px 200px 50px 200px;
-}
+} */
 
 .viewIcon {
   height: 24px;

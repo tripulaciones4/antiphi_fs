@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 import './QueryList.css';
-import viewIcon from '../../assets/viewIcon.jpg';
 import notificationIcon from '../../assets/notificationIcon.jpg';
+import viewIcon from '../../assets/viewIcon.jpg';
+import documentIcon from '../../assets/documentIcon.jpg';
+import searchIcon from '../../assets/searchIcon.jpg';
 
 
 const QueryList = ({queries,type}) => {
@@ -114,12 +116,32 @@ const QueryList = ({queries,type}) => {
 
       {type === 'lastQueriesCompany'
         ? sortLast(queries).map((element, i, queries) => (
-            <div className="header-table-staff2" key={i}>
-              <h4>{element.url}</h4>
-              <p>{element.user.email}</p>
-              <p>Hace {time(element.createdAt)}</p>
-              <p>{queries.filter(e => e.url === element.url).length}</p>
-              <p>{element.user.department}</p>
+            <div className="cardUser-container" key={i}>
+              
+              <div className="div1">
+                <h5 className="cardUser-name">{element.url}</h5>
+                <p className="cardUser-email">{element.user.email}</p>
+              </div>
+
+              <div className="div2">
+                
+              <div className="div-time">
+                <img className="viewIcon" src={viewIcon} alt="viewIcon" />
+                <p className="cardUser-time" >Hace {time(element.createdAt)}</p>
+              </div>
+
+              <div className="div-num" >
+                <img className="searchtIcon" src={searchIcon} alt="searchIcon" />
+                <p className="cardUser-num" >{queries.filter(e => e.url === element.url).length}</p>
+              </div>
+              
+              <div className="div-departament">
+                <img className="documentIcon" src={documentIcon} alt="documentIcon" />
+                <p className="cardUser-departament">{element.user.department}</p>
+              </div>
+
+              </div>
+
             </div>
           ))
         : null}
