@@ -91,7 +91,7 @@ const ReportingPhyshings = () => {
             </select>
           ) : null}
           <div className="container-global-userList">
-          <QueryList type={'lastQueriesCompany'} queries={physhings} />
+          <QueryList type={'lastQueriesCompany'} queries={filterList(physhings)} />
           </div>
         </div>
       </div>

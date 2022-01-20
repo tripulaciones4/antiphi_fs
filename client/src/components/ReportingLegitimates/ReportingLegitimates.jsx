@@ -91,7 +91,7 @@ const ReportingLegitimates = () => {
             </select>
           ) : null}
           <div className="container-global-userList">
-          <QueryList type={'lastQueriesCompany'} queries={legitimates} />
+          <QueryList type={'lastQueriesCompany'} queries={filterList(legitimates)} />
           </div>
         </div>
         </div>
