@@ -1,75 +1,89 @@
-
-.cardList-Home{
-    width: 459px;
-    height: 93px;
-    background: #FFFFFF;
-    border-radius: 8px;
-    margin-bottom: 6px;
-    padding-top: 19px;
-    padding-left: 45px;
+.cardList-Home {
+  width: 459px;
+  height: 93px;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  padding-top: 19px;
+  padding-left: 45px;
 }
 
-.container-totalTimeView{
-    display:flex;
-    align-items: center;
-    width: 1000px;
-    padding:0px;
-    height: 24px;
-    
+.seguras-header {
+  display: flex;
+  justify-content: space-between;
 }
 
-.viewIcon{
-    height: 24px;
-    width: 25px;
+.container-totalTimeView {
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  padding: 0px;
+  height: 24px;
 }
 
-.notificationIcon{
-    height: 24px;
-    width: 25px;
+.list-containerHome {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0 0 30px 30px;
+  height: 20rem;
+  overflow: scroll;
 }
 
-.totalTimeView{
-    font-family: 'SFregular';  
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-    color:#2D3982;
-    margin-left: 6px;
-
+.header-table-staff2 {
+  border-bottom: 1px solid lightgrey;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 400px 200px 200px 50px 200px;
 }
 
-.container-totalQueries{
-    display:flex;
-    align-items: center;
-    width: 1000px;
-    padding:0px;
-    height: 24px;
-
+.viewIcon {
+  height: 24px;
+  width: 25px;
 }
 
-.numberQueries{
-    font-family: 'SFregular';  
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-    color:#2D3982;
-    margin-left: 6px;
-
+.notificationIcon {
+  height: 24px;
+  width: 25px;
 }
 
-.elemUrl{
-    font-family: 'SFregular';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;   
-    letter-spacing: 0em;
-    text-align: left;
-    width: 400px;
+.totalTimeView {
+  font-family: 'SFregular';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2d3982;
+  margin-left: 6px;
+}
 
+.container-totalQueries {
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  padding: 0px;
+  height: 24px;
+}
+
+.numberQueries {
+  font-family: 'SFregular';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2d3982;
+  margin-left: 6px;
+}
+
+.elemUrl {
+  font-family: 'SFregular';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 400px;
 }
