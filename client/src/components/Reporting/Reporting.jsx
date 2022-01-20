@@ -108,6 +108,8 @@ const Reporting = () => {
         <div className="grafic-container">
           <Grafic />
         </div>
+
+
         <div
           className="list-searches-container"
           onChange={handleChange}
@@ -124,6 +126,7 @@ const Reporting = () => {
                 Vista
               </button>
             </div>
+
             {showFilter ? (
               <select
                 className="select filter_select selectReports"
@@ -140,10 +143,13 @@ const Reporting = () => {
                 ))}
               </select>
             ) : null}
+            <div className="container-global-userList">
             <QueryList
               type={'lastQueriesCompany'}
               queries={filterList(queries)}
             />
+            </div>
+            
           </div>
         </div>
       </div>

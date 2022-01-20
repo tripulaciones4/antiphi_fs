@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './ReportingPhyshings.css';
 import QueryList from '../QueryList/QueryList';
 import { userContext } from '../../context/userContext';
+import backIcon from '../../assets/backIcon.jpg';
 import axios from 'axios';
 
 const ReportingPhyshings = () => {
@@ -47,24 +48,25 @@ const ReportingPhyshings = () => {
   };
 
   return (
-    <div className="staff-container-global">
-      <div className="flex-rep-header">
-        <Link className="arrow-back" to="/reporting">
-          <p className="arrow-icon">&#8592;</p>
+    <div className="fondo-contenedor">
+      <div className="flex-rep-header addMargin">
+        <Link  to="/reporting">
+          <img className="arrow-icon" src={backIcon} alt="arrowIcon" />
         </Link>
         <h1 className="title-reporting">Reporte-Maliciosas</h1>
       </div>
 
-      <div className="body-reporting">
+      
         <div
           className="list-searches-container"
           onChange={handleChange}
           value={filter || ''}
         >
-          <div className="seguras-header">
+          <div className="container-staff-radious addPadding">
+          <div className="header-table-staff">
             <h3>Lista de Empleados</h3>
             <button
-              className="btn-filter-employers btn-filter-employers--2"
+              className="btn-filter-employers"
               onClick={() => setShowFilter(!showFilter)}
             >
               {' '}
@@ -88,10 +90,13 @@ const ReportingPhyshings = () => {
               ))}
             </select>
           ) : null}
+          <div className="container-global-userList">
           <QueryList type={'lastQueriesCompany'} queries={physhings} />
+          </div>
         </div>
       </div>
     </div>
+    
   );
 };
 

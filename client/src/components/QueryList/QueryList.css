@@ -8,10 +8,10 @@
   padding-left: 45px;
 }
 
-.seguras-header {
+/* .seguras-header {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .container-totalTimeView {
   display: flex;
@@ -19,21 +19,6 @@
   width: 1000px;
   padding: 0px;
   height: 24px;
-}
-
-.list-containerHome {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 0 0 30px 30px;
-  height: 20rem;
-  overflow: scroll;
-}
-
-.header-table-staff2 {
-  border-bottom: 1px solid lightgrey;
-  text-align: left;
-  display: grid;
-  grid-template-columns: 400px 200px 200px 50px 200px;
 }
 
 .viewIcon {
