@@ -12,7 +12,7 @@
   align-items: center;
   width: 1153px;
   height: 48px;
-  justify-content: space-between;
+  justify-content: right;
 
   margin-top: 38px;
   margin-bottom: 59px;
@@ -26,6 +26,8 @@
   letter-spacing: 0em;
   text-align: left;
   color: #0a376e;
+  position: absolute;
+  left: 13.5%;
 }
 
 .btn-staff-add {
