@@ -33,27 +33,36 @@
 }
 
 .iborrainputfile {
-    font-size:20px; 
-	font-weight:normal;
-	font-family: 'Lato';
+    font-family: "SFregular";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
 }
 /*Contenedor que contiene todo el botón*/
 .inputfileCSV + label {
-    color: #2D3982;
+    color: #FFFFFF;
     border-radius: 50px;
     border-style: solid;
+    background-color: #2D3982;
+
+    font-family: "SFregular";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
 }
 
 .inputfileCSV:focus + label,
 .inputfileCSV.has-focus + label,
 .inputfileCSV + label:hover {
-    color: #9f8465;
+    color: #FFFFFF;
 }
 
 .inputfileCSV + label figure {
     width: 100px;
     height: 135px;
-    background-color: #c39f77;
+    background-color: #FFFFFF;
     display: block;
     position: relative;
     padding: 30px;
@@ -63,7 +72,7 @@
 .inputfileCSV:focus + label figure,
 .inputfileCSV.has-focus + label figure,
 .inputfileCSV + label:hover figure {
-    background-color: #9f8465;
+    background-color: #FFFFFF;
 }
 
 .inputfileCSV + label figure::before,
@@ -77,24 +86,24 @@
 }
 
 .inputfileCSV + label figure::before {
-    border-top: 20px solid #282828;
+    border-top: 20px solid #FFFFFF;
     border-left: 20px solid transparent;
 }
 
 .inputfileCSV + label figure::after {
-    border-bottom: 20px solid #9f8465;
+    border-bottom: 20px solid #FFFFFF;
     border-right: 20px solid transparent;
 }
 
 .inputfileCSV:focus + label figure::after,
 .inputfileCSV.has-focus + label figure::after,
 .inputfileCSV + label:hover figure::after {
-    border-bottom-color: #c39f77;
+    border-bottom-color: #FFFFFF;
 }
 
 /*Tamaño logo*/
 .inputfileCSV + label svg {
     width: 35px;
     height: 35px;
-    fill:#00B9AD;
+    fill:#FFFFFF;
 }

@@ -43,7 +43,7 @@ const TableCsv = ({columns,data,close}) => {
   return (<div className="windowCsv">
     
       <h4 className="title-table">Empleados añadidos</h4>
-      <button className="btn-delete-table" onClick={()=>close()}>Borrar</button>
+      {data.length>0?<button className="btn-delete-table" onClick={()=>close()}>Borrar</button>:null}
     
     <div className="tableCsv">
     <DataTable
@@ -51,6 +51,7 @@ const TableCsv = ({columns,data,close}) => {
     highlightOnHover
     columns={columns}
     data={data}
+    noDataComponent="No se han añadido datos"
     />
     </div>
 <input className="input-table-password" type="password" onChange={handleChange} placeholder="Contraseña genérica"/>
