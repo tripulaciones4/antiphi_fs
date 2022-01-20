@@ -22,8 +22,9 @@ const Settings = () => {
         <div className={menu==="payments"? "greenFont":null} ><h2 className="links-config">Notificaciones</h2></div>
       </div>
 
+{
 //Para cuando sea un menú interactivo
-{/* 
+/* 
     onClick={()=>{setMenu("access")}}
     onClick={()=>{setMenu("data&privacy")}}
     onClick={()=>{setMenu("notifications")}}
