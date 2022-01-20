@@ -100,3 +100,76 @@
     align-items: center;
     width: 1171px;
 }
+
+
+.filter_select{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 24px;
+
+    position: absolute;
+    left: 65.7%;
+    right: 8.2%;
+    top: 20.55%;
+    bottom: 48%;
+
+    /* color-white */
+
+    background: #FFFFFF;
+    /* Azul 1 */
+
+    border: 1px solid #2D3982;
+    box-sizing: border-box;
+    /* Shadow card */
+    
+    box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+}
+
+.filter_select option{
+    position: static;
+width: 250px;
+height: 54px;
+left: 7px;
+top: 69px;
+
+flex: none;
+order: 2;
+flex-grow: 0;
+margin: 4px 0px 2px 0px;
+text-align: start;
+align-items: center;
+display: flex;
+padding-left: 5%;
+justify-content: start;
+border-radius: 2px;
+font-family: SFregular;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+
+}
+
+.filter_select option:checked{
+ color:#00B9AD;
+ font-style: normal;
+font-weight: 600;
+ font-size: 18px;
+ line-height: 21px;
+ background-color: transparent;
+ 
+}
+
+
+.filter_select:focus {
+    outline: none;
+    border-color: #2D3982;
+}
+
+.filter_select_all{
+    border-bottom: solid 2px #DDDDDD;
+    
+}
+

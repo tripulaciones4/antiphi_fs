@@ -63,8 +63,8 @@ const filterList=(arr)=>{
                 Vista</button>
                 
               {showFilter?
-              <select className="select" name="staff_filter">
-                  <option value="all" key="all" >Todos los departamentos</option>
+              <select className="select filter_select" name="staff_filter" size={departments.length+1}>
+                  <option value="all" key="all" className="filter_select_all" >Todos los departamentos</option>
                   {departments.map((department,i)=><option value={department} key={i}>{department}</option>)}
               </select>
               :null
