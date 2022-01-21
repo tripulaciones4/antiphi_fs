@@ -23,6 +23,7 @@
     "node-fetch": "^2.6.1",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
+    "react-gtm-module": "^2.0.11",
     "react-loader-spinner": "^5.0.10",
     "sequelize": "^6.13.0"
   },

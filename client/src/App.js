@@ -7,6 +7,11 @@ import { BrowserRouter } from 'react-router-dom'; // utilizar rutas
 import {useState } from "react";
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import TagManager from 'react-gtm-module'
+const tagManagerArgs = {
+  gtmId: 'GTM-5DH48LH'
+}
+TagManager.initialize(tagManagerArgs)
 
 function App() {
     
