@@ -7,8 +7,7 @@ import QueryList from "../QueryList/QueryList";
 import PopUp from "../PopUp/PopUp";
 import popUpIconG  from '../../assets/img/CheckPopUp.jpg';
 import popUpIconB from '../../assets/img/XPopUp.jpg'
-import Ellipsis from '@bit/joshk.react-spinners-css.ellipsis';
-
+import { TailSpin	 } from  'react-loader-spinner'
 
 
 const Form = () => {
@@ -112,7 +111,7 @@ const Form = () => {
                     </div>
 
                 </div>
-            {loading?<Ellipsis color="#00B9AD" size={400} style={{position:"fixed"}} />:null}
+            {loading?<div className="style_spinner"><TailSpin width="290" height="290" color='#00B9AD' ariaLabel='loading'/></div>:null}
             
 
             </div>
