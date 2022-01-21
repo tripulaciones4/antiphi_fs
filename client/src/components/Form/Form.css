@@ -53,8 +53,12 @@
 
 *:focus {
     outline: none;
+    
 }
-
+.input-search[type=text]:focus{
+    border:0;
+    border-color: transparent;
+}
 .input-search[type=text]{
     color:#2C2C2C;
 }

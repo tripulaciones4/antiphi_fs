@@ -64,17 +64,17 @@ const Reporting = () => {
             type="date"
             id="start"
             name="date-start"
-            defaultValue="2018-07-22"
+            defaultValue="2021-12-22"
             min="2018-01-01"
-            max="22-12-31"
+            max="2022-01-22"
           />
           <input
             type="date"
             id="start"
             name="date-end"
-            defaultValue="2018-07-22"
+            defaultValue="2022-01-22"
             min="2018-01-01"
-            max="22-12-31"
+            max="2022-01-22"
           />
         </div>
 
