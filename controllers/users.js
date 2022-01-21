@@ -153,12 +153,11 @@ const users = {
                     })
 
                 }else{
-                    res.json("Wrong Pass!")
+                    res.json({status:404,message:"No matches"})
                 }
             }else{
-                res.status(404).json("User not found");
-            }
-            
+                res.json({status:404,message:"No matches"});
+            }           
         }catch(err){
             res.json(err)
         }
