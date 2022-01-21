@@ -6,6 +6,7 @@ import Main from "./components/Main/Main";
 import { BrowserRouter } from 'react-router-dom'; // utilizar rutas
 import {useState } from "react";
 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 function App() {
     
